@@ -1,0 +1,17 @@
+/*
+ * main.c
+ *
+ *  Created on: Jun 7, 2018
+ *      Author: huzaifaasif
+ */
+
+#include "led.h"
+
+int main(void){
+
+	led_init();
+	led_turn_on(LED2_PORT, GPIO_PIN_5);
+	//led_turn_off(LED2_PORT, GPIO_PIN_5);
+
+	return 0;
+}

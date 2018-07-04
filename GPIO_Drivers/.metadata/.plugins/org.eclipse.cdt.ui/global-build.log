@@ -1,0 +1,1283 @@
+13:29:33 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:8:17: fatal error: led.h: No such file or directory
+compilation terminated.
+make: *** [Src/main.o] Error 1
+13:56:57 **** Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+In file included from ../Src/led.c:8:0:
+../Src/led.c: In function 'led_init':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:12:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+ #define GPIO_PIN_13   13
+                       ^
+../Src/led.c:21:23: note: in expansion of macro 'GPIO_PIN_13'
+  hal_gpio_init(GPIOC, GPIO_PIN_13);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'int'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+../Src/led.c:11:18: warning: variable 'led_pin_config' set but not used [-Wunused-but-set-variable]
+  GPIO_PIN_CONFIG led_pin_config;
+                  ^
+../Src/led.c: In function 'led_turn_on':
+../Src/led.c:25:2: error: too many arguments to function 'hal_gpio_write_to_pin'
+  hal_gpio_write_to_pin(GPIOx, 1, pin);
+  ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+../Src/led.c: In function 'led_turn_off':
+../Src/led.c:29:2: error: too many arguments to function 'hal_gpio_write_to_pin'
+  hal_gpio_write_to_pin(GPIOx, 0, pin);
+  ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+../Src/led.c: In function 'led_toggle':
+../Src/led.c:35:3: error: too many arguments to function 'hal_gpio_write_to_pin'
+   hal_gpio_write_to_pin(GPIOx, 0, pin);
+   ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+../Src/led.c:38:3: error: too many arguments to function 'hal_gpio_write_to_pin'
+   hal_gpio_write_to_pin(GPIOx, 1, pin);
+   ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+make: *** [Src/led.o] Error 1
+13:59:08 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+../Src/led.c: In function 'led_turn_on':
+../Src/led.c:25:2: error: too many arguments to function 'hal_gpio_write_to_pin'
+  hal_gpio_write_to_pin(GPIOx, 1, pin);
+  ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+../Src/led.c: In function 'led_turn_off':
+../Src/led.c:29:2: error: too many arguments to function 'hal_gpio_write_to_pin'
+  hal_gpio_write_to_pin(GPIOx, 0, pin);
+  ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+../Src/led.c: In function 'led_toggle':
+../Src/led.c:35:3: error: too many arguments to function 'hal_gpio_write_to_pin'
+   hal_gpio_write_to_pin(GPIOx, 0, pin);
+   ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+../Src/led.c:38:3: error: too many arguments to function 'hal_gpio_write_to_pin'
+   hal_gpio_write_to_pin(GPIOx, 1, pin);
+   ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val);
+      ^
+make: *** [Src/led.o] Error 1
+14:00:13 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:25:77: error: expected declaration specifiers or '...' before ')' token
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint8_t value, uint16_t pin,){
+                                                                             ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_output_type' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:39:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:42:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:46:6: warning: conflicting types for 'hal_gpio_configure_pin_output_type'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_output_type' was here
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:50:6: warning: conflicting types for 'hal_gpio_configure_pin_pin_speed'
+ void hal_gpio_configure_pin_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: note: previous implicit declaration of 'hal_gpio_configure_pin_pin_speed' was here
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:02:33 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:25:6: error: conflicting types for 'hal_gpio_write_to_pin'
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint8_t value, uint16_t pin){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: previous declaration of 'hal_gpio_write_to_pin' was here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val, uint16_t pin);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_output_type' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:39:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:42:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:46:6: warning: conflicting types for 'hal_gpio_configure_pin_output_type'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_output_type' was here
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:50:6: warning: conflicting types for 'hal_gpio_configure_pin_pin_speed'
+ void hal_gpio_configure_pin_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: note: previous implicit declaration of 'hal_gpio_configure_pin_pin_speed' was here
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:04:26 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:25:6: error: conflicting types for 'hal_gpio_write_to_pin'
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint8_t value, uint16_t pin){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: previous declaration of 'hal_gpio_write_to_pin' was here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val, uint16_t pin);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_output_type' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:39:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:42:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:46:6: warning: conflicting types for 'hal_gpio_configure_pin_output_type'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_output_type' was here
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:50:6: warning: conflicting types for 'hal_gpio_configure_pin_pin_speed'
+ void hal_gpio_configure_pin_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: note: previous implicit declaration of 'hal_gpio_configure_pin_pin_speed' was here
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:06:13 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint16_t {aka short unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:25:6: error: conflicting types for 'hal_gpio_write_to_pin'
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint8_t value, uint16_t pin){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:76:6: note: previous declaration of 'hal_gpio_write_to_pin' was here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t val, uint16_t pin);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_output_type' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:39:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:42:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:46:6: warning: conflicting types for 'hal_gpio_configure_pin_output_type'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_output_type' was here
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:50:6: warning: conflicting types for 'hal_gpio_configure_pin_pin_speed'
+ void hal_gpio_configure_pin_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: note: previous implicit declaration of 'hal_gpio_configure_pin_pin_speed' was here
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:08:45 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint16_t {aka short unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_output_type' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:39:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:42:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:46:6: warning: conflicting types for 'hal_gpio_configure_pin_output_type'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_output_type' was here
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:50:6: warning: conflicting types for 'hal_gpio_configure_pin_pin_speed'
+ void hal_gpio_configure_pin_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: note: previous implicit declaration of 'hal_gpio_configure_pin_pin_speed' was here
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:11:59 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_output_type' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:39:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:42:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:46:6: warning: conflicting types for 'hal_gpio_configure_pin_output_type'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_output_type' was here
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin->pin, gpio_pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:50:6: warning: conflicting types for 'hal_gpio_configure_pin_pin_speed'
+ void hal_gpio_configure_pin_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:38:2: note: previous implicit declaration of 'hal_gpio_configure_pin_pin_speed' was here
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:12:13 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:9:6: error: conflicting types for 'hal_gpio_alt_function'
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_val){
+      ^
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:7:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:79:6: note: previous declaration of 'hal_gpio_alt_function' was here
+ void hal_gpio_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t alt_fun);
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:44:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o] Error 1
+14:13:25 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+../Src/led.c: In function 'led_init':
+../Src/led.c:21:23: warning: passing argument 2 of 'hal_gpio_init' makes pointer from integer without a cast [-Wint-conversion]
+  hal_gpio_init(GPIOC, led_pin_config.pin);
+                       ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc/led.h:7:0,
+                 from ../Src/led.c:8:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:70:6: note: expected 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}' but argument is of type 'uint16_t {aka short unsigned int}'
+ void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_PIN_CONFIG *gpio_pin);
+      ^
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:44:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:37:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx, gpio_pin->pin, gpio_pin->mode);
+  ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    880	      8	   1568	   2456	    998	GPIO_Drivers.elf
+ 
+14:14:42 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:14:49 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:19:40 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:52:44: warning: passing argument 2 of 'hal_gpio_configure_pin_output_type' makes integer from pointer without a cast [-Wint-conversion]
+  hal_gpio_configure_pin_output_type(GPIOx, gpio_pin, gpio_pin->op_type);
+                                            ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:36:6: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'GPIO_PIN_CONFIG * {aka struct <anonymous> *}'
+ void hal_gpio_configure_pin_output_type(GPIO_TypeDef *GPIOx, uint16_t pin, uint16_t otype){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:53:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:54:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin, gpio_pin->pull);
+  ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o: In function `hal_gpio_init':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:53: undefined reference to `hal_gpio_configure_pin_pin_speed'
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:54: undefined reference to `hal_gpio_configure_pin_pup'
+collect2: error: ld returned 1 exit status
+make: *** [GPIO_Drivers.elf] Error 1
+14:19:59 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:53:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pin_speed(GPIOx, gpio_pin->pin, gpio_pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:54:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pup' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pup(GPIOx, gpio_pin->pin, gpio_pin->pull);
+  ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o: In function `hal_gpio_init':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:53: undefined reference to `hal_gpio_configure_pin_pin_speed'
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c:54: undefined reference to `hal_gpio_configure_pin_pup'
+collect2: error: ld returned 1 exit status
+make: *** [GPIO_Drivers.elf] Error 1
+14:20:22 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    952	      8	   1568	   2528	    9e0	GPIO_Drivers.elf
+ 
+14:22:29 **** Programing project GPIO_Drivers on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/GPIO_Drivers.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.250693
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0800032c msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/GPIO_Drivers.elf in 0.622855s (25.688 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 960 bytes in 0.057971s (16.172 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+14:33:50 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:13:21: error: 'GPIO_PIN_13' undeclared (first use in this function)
+  led_turn_on(GPIOC, GPIO_PIN_13);
+                     ^
+../Src/main.c:13:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/main.o] Error 1
+14:34:00 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	GPIO_Drivers.elf
+ 
+14:34:11 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	GPIO_Drivers.elf
+ 
+14:34:44 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:35:19 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:35:46 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:36:20 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:36:47 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	GPIO_Drivers.elf
+ 
+14:37:03 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:37:39 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	GPIO_Drivers.elf
+ 
+14:41:19 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1012	      8	   1568	   2588	    a1c	GPIO_Drivers.elf
+ 
+14:42:45 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:43:19 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:10:7: error: 'true' undeclared (first use in this function)
+ while(true){
+       ^
+../Src/main.c:10:7: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/main.o] Error 1
+14:43:43 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	      8	   1568	   2584	    a18	GPIO_Drivers.elf
+ 
+14:44:03 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:44:37 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:47:40 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	      8	   1568	   2584	    a18	GPIO_Drivers.elf
+ 
+14:48:04 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:48:40 **** Programing project GPIO_Drivers on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/GPIO_Drivers.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.258614
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000338 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/GPIO_Drivers.elf in 0.636862s (25.123 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 1016 bytes in 0.056253s (17.638 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+12:37:29 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+12:40:01 **** Programing project GPIO_Drivers on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/GPIO_Drivers.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.258614
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000338 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/GPIO_Drivers.elf in 1.492024s (10.724 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 1016 bytes in 0.058896s (16.846 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+12:41:59 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	      8	   1568	   2584	    a18	GPIO_Drivers.elf
+ 
+14:15:48 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:15:31: error: 'GPIO_BUTTON_PIN' undeclared (first use in this function)
+  hal_gpio_configure_interrupt(GPIO_BUTTON_PIN, INT_FALLING_EDGE);
+                               ^
+../Src/main.c:15:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/main.o] Error 1
+14:16:22 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Src/main.o: In function `main':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug/../Src/main.c:15: undefined reference to `hal_gpio_configure_interrupt'
+collect2: error: ld returned 1 exit status
+make: *** [GPIO_Drivers.elf] Error 1
+14:16:55 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1088	      8	   1568	   2664	    a68	GPIO_Drivers.elf
+ 
+14:17:06 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1088	      8	   1568	   2664	    a68	GPIO_Drivers.elf
+ 
+14:22:41 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1140	      8	   1568	   2716	    a9c	GPIO_Drivers.elf
+ 
+14:25:08 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	GPIO_Drivers.elf
+ 
+14:25:47 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:26:11 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:26:26 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:27:17 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:27:42 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:29:04 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	GPIO_Drivers.elf
+ 
+14:31:15 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+14:34:37 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	GPIO_Drivers.elf
+ 
+14:35:29 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	GPIO_Drivers.elf
+ 
+14:37:42 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1052	      8	   1568	   2628	    a44	GPIO_Drivers.elf
+ 

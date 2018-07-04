@@ -1,0 +1,13 @@
+14:27:42 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -DUSE_HAL_DRIVER -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+In file included from ../Src/led.c:8:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc/led.h:11:37: fatal error: stm32f401xx_gpio_driver.h: No such file or directory
+compilation terminated.
+make: *** [Src/led.o] Error 1
+
+14:27:45 Build Finished (took 3s.620ms)
+

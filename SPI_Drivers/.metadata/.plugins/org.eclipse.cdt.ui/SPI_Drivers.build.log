@@ -1,0 +1,23 @@
+18:06:33 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	SPI_Drivers.elf
+ 
+
+18:06:35 Build Finished (took 1s.981ms)
+

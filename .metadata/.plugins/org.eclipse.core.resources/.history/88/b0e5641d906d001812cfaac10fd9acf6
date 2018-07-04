@@ -1,0 +1,69 @@
+/*
+ * stm32f401xx_gpio_driver.c
+ *
+ *  Created on: Jun 7, 2018
+ *      Author: huzaifaasif
+ */
+
+#include "stm32f401xx_gpio_driver.h"
+
+void hal_gpio_init(GPIO_TypeDef *GPIOx, GPIO_Pin_Config *GPIO_Pin){
+
+	hal_gpio_configure_pin_mode(GPIOx,GPIO_Pin->pin, GPIO_Pin->mode);
+	hal_gpio_configure_pin_speed(GPIOx,GPIO_Pin->pin, GPIO_Pin->speed);
+	hal_gpio_configure_pin_otype(GPIOx,GPIO_Pin->pin, GPIO_Pin->op_type);
+	hal_gpio_configure_pin_pupd(GPIOx,GPIO_Pin->pin, GPIO_Pin->pull);
+}
+
+void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+
+	GPIOx->MODER |= (mode << (2 * pin));
+}
+
+void hal_gpio_configure_output_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t op_type){
+	GPIOx->OTYPER |= op_type << pin;
+}
+
+void hal_gpio_configure_output_speed(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t speed){
+	GPIOx->OSPEEDR |= speed << (2 * pin);
+}
+
+void hal_gpio_configure_pupd(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t pupd){
+	GPIOx->PUPDR |= pupd << (2 * pin);
+}
+
+/*
+ * AFR = Alternate Function Register = 32-bit
+ * AFR[0] = Low register
+ * AFR[1] = High register
+*/
+void hal_gpio_alternate_func(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t alt_func){
+	if (pin <= 7){
+		GPIOx->AFR[0] |= alt_func << (4 * pin);
+	}
+	else{
+		GPIOx->AFR[1] |= alt_func << ( (pin % 8 ) * 4);
+	}
+}
+//---------------------------------------------
+void hal_GPIO_Pin(GPIO_TypeDef *GPIOx, GPIO_Pin_Config *GPIO_Pin){
+
+
+}
+
+uint8_t hal_gpio_readpin(GPIO_TypeDef *GPIOx, uint16_t GPIO_pin){
+	uint8_t read = (GPIOx->IDR >> GPIO_pin) & 0x01;
+	return read;
+}
+void hal_gpio_writepin(GPIO_TypeDef *GPIOx, uint16_t GPIO_pin, uint8_t value){
+	if (value){
+		GPIOx->ODR |= 1 << GPIO_pin;
+		//GPIOx->BSRR = 1 << GPIO_pin;
+	}
+	else{
+		GPIOx->ODR &= ~(1 << GPIO_pin);
+	}
+}
+void hal_gpio_set_alternate_func(GPIO_TypeDef *GPIOx, uint16_t GPIO_pin, uint16_t value){
+
+}

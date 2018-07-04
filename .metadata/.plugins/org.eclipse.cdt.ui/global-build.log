@@ -1,0 +1,753 @@
+16:48:45 **** Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../startup/startup_stm32f401xe.s
+Invoking: MCU GCC Assembler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32f401xe.o" "../startup/startup_stm32f401xe.s"
+Finished building: ../startup/startup_stm32f401xe.s
+ 
+Building file: ../Src/system_stm32f4xx.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" -o "Src/system_stm32f4xx.o" "../Src/system_stm32f4xx.c"
+Finished building: ../Src/system_stm32f4xx.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+startup/startup_stm32f401xe.o: In function `LoopFillZerobss':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug/../startup/startup_stm32f401xe.s:113: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [DriverDev.elf] Error 1
+16:50:38 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	DriverDev.elf
+ 
+16:54:17 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	DriverDev.elf
+ 
+18:40:43 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:8:17: fatal error: led.h: No such file or directory
+compilation terminated.
+make: *** [Src/main.o] Error 1
+18:42:52 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Src/system_stm32f4xx.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" -o "Src/system_stm32f4xx.o" "../Src/system_stm32f4xx.c"
+Finished building: ../Src/system_stm32f4xx.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    880	      8	   1568	   2456	    998	DriverDev.elf
+ 
+18:44:35 **** Programing project DriverDev on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/DriverDev.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.245940
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0800151c msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/DriverDev.elf in 0.635916s (25.161 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 888 bytes in 0.057616s (15.051 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+18:45:28 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:46:21 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:46:33 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:50:21 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:59:19 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    880	      8	   1568	   2456	    998	DriverDev.elf
+ 
+18:59:24 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+19:00:30 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+19:01:54 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    880	      8	   1568	   2456	    998	DriverDev.elf
+ 
+19:03:40 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:13:25: error: 'LED2_PIN' undeclared (first use in this function)
+  led_turn_on(LED2_PORT, LED2_PIN);
+                         ^
+../Src/main.c:13:25: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/main.o] Error 1
+19:04:14 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    880	      8	   1568	   2456	    998	DriverDev.elf
+ 
+19:04:18 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+19:25:50 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c: In function 'hal_gpio_configure_pin_mode':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:11:7: error: 'GPIO_TypeDef {aka struct <anonymous>}' has no member named 'modeR'
+  GPIOx->modeR |= (mode << (2 * pin));
+       ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o] Error 1
+19:26:13 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c: In function 'hal_gpio_configure_pin_mode':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:11:7: error: 'GPIO_TypeDef {aka struct <anonymous>}' has no member named 'mode'
+  GPIOx->mode |= (mode << (2 * pin));
+       ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o] Error 1
+19:26:43 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Src/led.o: In function `led_init':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug/../Src/led.c:20: undefined reference to `hal_gpio_init'
+collect2: error: ld returned 1 exit status
+make: *** [DriverDev.elf] Error 1
+19:29:57 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    880	      8	   1568	   2456	    998	DriverDev.elf
+ 
+11:53:33 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c: In function 'hal_gpio_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:12:2: warning: implicit declaration of function 'hal_gpio_configure_pin_mode' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_mode(GPIOx,GPIO_Pin->pin, GPIO_Pin->mode);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:13:2: warning: implicit declaration of function 'hal_gpio_configure_pin_speed' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_speed(GPIOx,GPIO_Pin->pin, GPIO_Pin->speed);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:14:2: warning: implicit declaration of function 'hal_gpio_configure_pin_otype' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_otype(GPIOx,GPIO_Pin->pin, GPIO_Pin->op_type);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:15:2: warning: implicit declaration of function 'hal_gpio_configure_pin_pupd' [-Wimplicit-function-declaration]
+  hal_gpio_configure_pin_pupd(GPIOx,GPIO_Pin->pin, GPIO_Pin->pull);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:18:6: warning: conflicting types for 'hal_gpio_configure_pin_mode'
+ void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin, uint32_t mode){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:12:2: note: previous implicit declaration of 'hal_gpio_configure_pin_mode' was here
+  hal_gpio_configure_pin_mode(GPIOx,GPIO_Pin->pin, GPIO_Pin->mode);
+  ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o: In function `hal_gpio_init':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:13: undefined reference to `hal_gpio_configure_pin_speed'
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:14: undefined reference to `hal_gpio_configure_pin_otype'
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c:15: undefined reference to `hal_gpio_configure_pin_pupd'
+collect2: error: ld returned 1 exit status
+make: *** [DriverDev.elf] Error 1
+11:58:19 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	DriverDev.elf
+ 
+11:59:10 **** Programing project DriverDev on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/DriverDev.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.254425
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080002b8 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/DriverDev.elf in 0.747827s (21.395 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 984 bytes in 0.057269s (16.779 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+22:38:34 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f401xx_gpio_driver.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	DriverDev.elf
+ 
+18:21:46 **** Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:24:00 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:24:29 **** Programing project DriverDev on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/DriverDev.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.254425
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000318 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/DriverDev.elf in 0.619348s (25.834 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 984 bytes in 0.057286s (16.774 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+18:25:43 **** Programing project DriverDev on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/DriverDev.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.256011
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000318 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/DriverDev.elf in 0.611865s (26.150 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 984 bytes in 0.116832s (8.225 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+18:26:46 **** Programing project DriverDev on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/DriverDev.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.260766
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000318 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/DriverDev.elf in 0.611935s (26.147 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 984 bytes in 0.056586s (16.982 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+18:27:54 **** Programing project DriverDev on chip ****
+/Users/huzaifaasif/.p2/pool/plugins/fr.ac6.mcu.externaltools.openocd.macos64_1.13.1.201703061517/tools/openocd/bin/openocd -f nucleo_f401re.cfg -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts/st_board -s /Users/huzaifaasif/eclipse/cpp-oxygen/Eclipse.app/Contents/Eclipse/../../../../../.p2/pool/plugins/fr.ac6.mcu.debug_1.12.2.201705101219/resources/openocd/scripts -c "program Debug/DriverDev.elf verify reset exit" 
+Open On-Chip Debugger 0.10.0-dev-00275-gd486ac2-dirty (2017-03-06-15:17)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 M v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.260766
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+stm32f4x.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000318 msp: 0x20018000
+configuring PLL
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20018000
+wrote 16384 bytes from file Debug/DriverDev.elf in 0.607884s (26.321 KiB/s)
+** Programming Finished **
+** Verify Started **
+stm32f4x.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 984 bytes in 0.057400s (16.741 KiB/s)
+** Verified OK **
+** Resetting Target **
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+shutdown command invoked
+18:28:08 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    920	      8	   1568	   2496	    9c0	DriverDev.elf
+ 
+18:28:48 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:29:05 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+make: Nothing to be done for `all'.
+18:29:31 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	DriverDev.elf
+ 
+18:30:06 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: DriverDev.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "DriverDev.elf" @"objects.list"  
+Finished building target: DriverDev.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DriverDev.elf" "DriverDev.bin"
+arm-none-eabi-size "DriverDev.elf"
+   text	   data	    bss	    dec	    hex	filename
+    996	      8	   1568	   2572	    a0c	DriverDev.elf
+ 
+14:27:42 **** Incremental Build of configuration Debug for project DriverDev ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -DUSE_HAL_DRIVER -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+In file included from ../Src/led.c:8:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/DriverDev/Inc/led.h:11:37: fatal error: stm32f401xx_gpio_driver.h: No such file or directory
+compilation terminated.
+make: *** [Src/led.o] Error 1

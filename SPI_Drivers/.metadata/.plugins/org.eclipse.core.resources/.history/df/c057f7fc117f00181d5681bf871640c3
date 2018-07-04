@@ -1,0 +1,44 @@
+/*
+ * hal_spi_driver.h
+ *
+ *  Created on: Jul 3, 2018
+ *      Author: huzaifaasif
+ */
+
+#ifndef STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_
+#define STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_
+
+#include "stm32f401xe.h"
+
+/******************************************************************************/
+/*                                                                            */
+/*                        1. Serial Peripheral Interface                         */
+/*                           Register Bit Definitions                          */
+/******************************************************************************/
+
+/*******************  Bit definition for SPI_CR1 register  ********************/
+
+//Bidirectional data mode enable
+#define SPI_CR1_BIDIMODE 								(uint32_t) 1 << 15
+#define SPI_ENABLE_2_LINE_UNI_DIR        				0
+#define SPI_ENABLE_1_LINE_BIDI           				1
+
+//Data frame format
+#define SPI_CR1_DFF										(uint32_t) 1 << 11
+#define SPI_8_BIT_DFF_ENABLE								0
+#define SPI_16_BIT_DFF_ENABLE							1
+
+//Software slave management
+#define SPI_CR1_SSM										(uint32_t) 1 << 9
+#define SPI_CR1_SSM_DISABLE								0
+#define SPI_CR1_SSM_ENABLE								1
+
+// Internal slave select
+#define SPI_CR1_SSI 									   (uint32_t) 1 << 8
+
+// LSBFIRST -- Frame Format
+#define SPI_CR1_LSB_FIRST							   (uint32_t) 1 << 7
+#define SPI_TX_MSB_FIRST									0
+#define SPI_TX_LSB_FIRST									1
+
+#endif /* STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_ */

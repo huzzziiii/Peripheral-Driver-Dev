@@ -1,0 +1,15 @@
+/*
+ * hal_spi_driver.h
+ *
+ *  Created on: Jul 3, 2018
+ *      Author: huzaifaasif
+ */
+
+#ifndef STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_
+#define STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_
+
+#include "stm32f401xe.h"
+
+
+
+#endif /* STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_ */
