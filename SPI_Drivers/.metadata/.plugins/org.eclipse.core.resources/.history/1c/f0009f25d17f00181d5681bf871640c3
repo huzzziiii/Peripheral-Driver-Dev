@@ -18,7 +18,6 @@
 
 /*******************  Bit definition for SPI_CR1 register  ********************/
 
-#define RESET											0
 //Bidirectional data mode enable
 #define SPI_CR1_BIDIMODE 								(uint32_t) 1 << 15
 #define SPI_ENABLE_2_LINE_UNI_DIR        				0
@@ -124,7 +123,7 @@
 typedef struct{
 	uint32_t Mode;
 	uint32_t Direction;	//single line Bi-Di mode OR 2-line uni-direction mode
-	uint32_t Data_Size;	//8 or 16 bit data transmission -- 0 or 1 respectively
+	uint32_t Data_Size;		//8 or 16 bit data transmission
 	uint32_t CLK_Polarity;
 	uint32_t CLK_Phase;
 	uint32_t Baud_Rate;
@@ -147,12 +146,8 @@ typedef struct __spi_handle_t {
 	SPI_TypeDef		*Instance;	//SPI registers base address
 	SPI_Init			Init;		//SPI communication protocols
 	uint8_t			*txBuffer;	//Pointer to SPI TX transfer Buffer
-	uint8_t			*rxBuffer;	//Pointer to SPI RX transfer Buffer
-
 	uint16_t			TX_tranfer_size;
-	uint16_t			RX_tranfer_size;
-	uint16_t			tx_count;
-	uint16_t 		rx_count;
+
 	hal_spi_state state;
 
 } spi_handle_t;

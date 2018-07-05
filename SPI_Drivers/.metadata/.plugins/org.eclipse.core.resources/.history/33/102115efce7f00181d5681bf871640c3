@@ -18,7 +18,6 @@
 
 /*******************  Bit definition for SPI_CR1 register  ********************/
 
-#define RESET											0
 //Bidirectional data mode enable
 #define SPI_CR1_BIDIMODE 								(uint32_t) 1 << 15
 #define SPI_ENABLE_2_LINE_UNI_DIR        				0
@@ -124,20 +123,18 @@
 typedef struct{
 	uint32_t Mode;
 	uint32_t Direction;	//single line Bi-Di mode OR 2-line uni-direction mode
-	uint32_t Data_Size;	//8 or 16 bit data transmission -- 0 or 1 respectively
+	uint32_t Data_Size;		//8 or 16 bit data transmission
 	uint32_t CLK_Polarity;
 	uint32_t CLK_Phase;
 	uint32_t Baud_Rate;
 	uint32_t NSS;		//sets hardware of software slave select management using SSM bit in SPI_CR1 reg
-	uint32_t First_Bit; //MSB or LSB
+	uint32_t First_Bit; 		//MSB or LSB
 } SPI_Init;
 
 typedef enum{
 	HAL_SPI_STATE_RESET 		= 0x00,
 	HAL_SPI_STATE_READY		= 0x01,
-	HAL_SPI_STATE_BUSY		= 0x02,	// SPI process is ongoing
-	HAL_SPI_STATE_BUSY_TX	= 0x12,	// Data transmission is ongoing
-	HAL_SPI_STATE_BUSY_RX	= 0x22,	// Data reception is ongoing
+	HAL_SPI_STATE_BUSY		= 0x02
 } hal_spi_state;
 
 /**
@@ -146,16 +143,7 @@ typedef enum{
 typedef struct __spi_handle_t {
 	SPI_TypeDef		*Instance;	//SPI registers base address
 	SPI_Init			Init;		//SPI communication protocols
-	uint8_t			*txBuffer;	//Pointer to SPI TX transfer Buffer
-	uint8_t			*rxBuffer;	//Pointer to SPI RX transfer Buffer
-
-	uint16_t			TX_tranfer_size;
-	uint16_t			RX_tranfer_size;
-	uint16_t			tx_count;
-	uint16_t 		rx_count;
-	hal_spi_state state;
-
-} spi_handle_t;
+} spi_handle;
 
 
 /******************************************************************************/
@@ -164,10 +152,7 @@ typedef struct __spi_handle_t {
 /*                                                                            */
 /******************************************************************************/
 
-void hal_spi_init(spi_handle_t *spi_handle);
+void hal_spi_init(spi_handle *spi_hndlr);
 
-void hal_spi_irq_handler(spi_handle_t *hspi);
-
-void hal_spi_master_tx(spi_handle_t *spi_handle, uint8_t *buffer, uint32_t length);
-
+void hal_spi_irq_handler(spi_handle *hspi);
 #endif /* STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_ */

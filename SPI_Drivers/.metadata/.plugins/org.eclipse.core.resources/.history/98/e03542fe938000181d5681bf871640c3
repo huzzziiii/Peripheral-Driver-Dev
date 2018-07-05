@@ -124,7 +124,7 @@
 typedef struct{
 	uint32_t Mode;
 	uint32_t Direction;	//single line Bi-Di mode OR 2-line uni-direction mode
-	uint32_t Data_Size;	//8 or 16 bit data transmission -- 0 or 1 respectively
+	uint32_t Data_Size;		//8 or 16 bit data transmission
 	uint32_t CLK_Polarity;
 	uint32_t CLK_Phase;
 	uint32_t Baud_Rate;
@@ -151,8 +151,6 @@ typedef struct __spi_handle_t {
 
 	uint16_t			TX_tranfer_size;
 	uint16_t			RX_tranfer_size;
-	uint16_t			tx_count;
-	uint16_t 		rx_count;
 	hal_spi_state state;
 
 } spi_handle_t;

@@ -134,7 +134,6 @@ void hal_spi_close_rx_interrupt(spi_handle_t *hspi){
 	hspi->state = HAL_SPI_STATE_READY;
 }
 
-/* Handles RXNE interrupt */
 void hal_spi_handle_rx_interrupt(spi_handle_t *hspi){
 	//receive data in 8-bit mode
 	if (hspi->Init->Data_Size == SPI_8_BIT_DFF_ENABLE){

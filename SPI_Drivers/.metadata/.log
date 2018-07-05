@@ -606,3 +606,30 @@ org.eclipse.core.runtime.CoreException: No property tester contributes a propert
 
 !ENTRY org.eclipse.cdt.core 1 0 2018-07-03 18:05:51.894
 !MESSAGE Indexed 'SPI_Drivers' (1 sources, 47 headers) in 6.64 sec: 4,943 declarations; 7,942 references; 0 unresolved inclusions; 75 syntax errors; 54 unresolved names (0.42%)
+
+!ENTRY org.eclipse.cdt.ui 2 0 2018-07-05 16:36:12.478
+!MESSAGE The 'Parsing-based Proposals (Task-Focused)' proposal computer from the 'org.eclipse.cdt.mylyn.ui' plug-in did not complete normally. The extension took too long to return from the 'computeCompletionProposals()' operation.
+
+!ENTRY org.eclipse.cdt.ui 4 0 2018-07-05 16:46:14.030
+!MESSAGE Error in CDT UI during reconcile
+!STACK 1
+C Model Exception: C Model Status [Element hal_spi_driver.c does not exist.]
+	at org.eclipse.cdt.internal.core.model.CElement.newNotPresentException(CElement.java:484)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.makeConsistent(TranslationUnit.java:580)
+	at org.eclipse.cdt.internal.core.model.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:62)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.execute(CModelOperation.java:341)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:607)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:635)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.reconcile(WorkingCopy.java:362)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:78)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+!SUBENTRY 1 org.eclipse.cdt.core 4 969 2018-07-05 16:46:14.142
+!MESSAGE Element hal_spi_driver.c does not exist.
+
+!ENTRY org.eclipse.cdt.ui 2 0 2018-07-05 16:46:26.523
+!MESSAGE The 'Parsing-based Proposals (Task-Focused)' proposal computer from the 'org.eclipse.cdt.mylyn.ui' plug-in did not complete normally. The extension took too long to return from the 'computeCompletionProposals()' operation.
