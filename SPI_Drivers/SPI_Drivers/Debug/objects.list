@@ -1,4 +1,6 @@
 "Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o"
-"Src/main.o"
+"Drivers/STM32F4xx_HAL_Driver/Src/led.o"
+"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o"
+"Src/spi_master.o"
 "Src/system_stm32f4xx.o"
 "startup/startup_stm32f401xe.o"

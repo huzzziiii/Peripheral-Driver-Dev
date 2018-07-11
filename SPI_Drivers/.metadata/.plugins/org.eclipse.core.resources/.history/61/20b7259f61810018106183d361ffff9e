@@ -1,0 +1,58 @@
+/*
+ * spi_master.c
+ *
+ *  Created on: Jul 6, 2018
+ *      Author: huzaifaasif
+ */
+#include "hal_spi_driver.h"
+#include "stm32f4xx_gpio_driver.h"
+#include "spi_main.h"
+
+/*Configuring for SPI2 */
+
+void spi_gpio_init(void){
+	GPIO_PIN_CONFIG spi_conf;
+
+	_HAL_RCC_SPI2_CLK_ENABLE();
+
+	/* configure GPIOB_PIN_13 for SPI CLK functionality */
+	spi_conf.pin = SPI_CLK_PIN;		//PIN 13
+	spi_conf.mode = GPIO_PIN_ALT_FUN_MODE; //Alternate mode is used for comm. protocols like SPI, I2C
+
+	spi_conf.op_type = GPIO_PUSH_PULL;
+	spi_conf.pull = GPIO_PULL_DOWN;
+	spi_conf.speed = GPIO_MEDIUM_SPEED;
+	//setting up SPI settings
+	hal_gpio_alt_function(GPIOB, SPI_CLK_PIN, GPIO_PIN_AF5_SPI2);
+	//setting up GPIO settings
+	hal_gpio_init(GPIOB,&spi_conf);
+
+	/* configure GPIOB_PIN_14 for SPI MISO functionality */
+	spi_conf.pin = SPI_MISO_PIN;
+	spi_conf.pull = GPIO_PULL_UP;
+	hal_gpio_alt_function(GPIOB, SPI_MISO_PIN, GPIO_PIN_AF5_SPI2);
+	hal_gpio_init(GPIOB,&spi_conf);
+
+	/* configure GPIOB_PIN_15 for SPI MOSI functionality */
+	spi_conf.pin = SPI_MOSI_PIN;
+	spi_conf.pull = GPIO_PULL_UP;
+	hal_gpio_alt_function(GPIOB, SPI_MOSI_PIN, GPIO_PIN_AF5_SPI2);
+	hal_gpio_init(GPIOB,&spi_conf);
+}
+
+
+int main(void){
+
+	/* Initializing SPI GPIO */
+	spi_gpio_init();
+
+	/* Initializing LED GPIO */
+	led_init();
+
+
+}
+
+
+
+
+

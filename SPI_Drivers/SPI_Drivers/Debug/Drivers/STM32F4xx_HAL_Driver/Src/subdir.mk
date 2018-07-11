@@ -4,13 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c 
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c \
+../Drivers/STM32F4xx_HAL_Driver/Src/led.c \
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c 
 
 OBJS += \
-./Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o 
+./Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o \
+./Drivers/STM32F4xx_HAL_Driver/Src/led.o \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o 
 
 C_DEPS += \
-./Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d 
+./Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d \
+./Drivers/STM32F4xx_HAL_Driver/Src/led.d \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

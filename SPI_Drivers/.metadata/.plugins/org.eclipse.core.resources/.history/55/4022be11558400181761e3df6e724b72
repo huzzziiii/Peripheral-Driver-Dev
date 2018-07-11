@@ -1,0 +1,300 @@
+/*
+ * hal_spi_driver.c
+ *
+ */
+#include "hal_spi_driver.h"
+
+
+void hal_spi_init(spi_handle_t *spi_handle){
+	/*Configuring:
+	 * CPHA and CPOL
+	 * SPI DATA SIZE
+	 *
+	 */
+}
+
+/******************************************************************************/
+/*                                                                            */
+/*                      Helper functions                                 */
+/*                                                                            */
+/******************************************************************************/
+/**
+ * Configures master or slave mode
+ */
+void hal_spi_config_device_mode(SPI_TypeDef *SPIx, uint32_t master){
+	if (master){
+		SPIx->CR1 |= SPI_CR1_MSTR;
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_MSTR;
+	}
+}
+
+void hal_spi_config_phase_polarity(SPI_TypeDef *SPIx, uint32_t phase, uint32_t polarity){
+	if (phase){
+		SPIx->CR1 |= SPI_CR1_CPHA;
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_CPHA;
+	}
+
+	if (polarity){
+		SPIx->CR1 |= SPI_CR1_CPOL;
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_CPOL;
+	}
+}
+
+// BY DEFAULT, SPI SENTS 8-bit data with MSB first
+void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first){
+	if (datasize_16){
+		SPIx->CR1 |= SPI_CR1_DFF;	//16 bit
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_DFF;	//8 bit
+	}
+
+	if (lsb_first){
+		SPIx->CR1 |= SPI_CR1_LSB_FIRST;	//send out LSB first
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_LSB_FIRST;	//send out MSB first
+	}
+}
+
+//Software/hardware slave management (SSM)
+void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+	if (ssm_enable){
+		SPIx->CR1 |= SPI_CR1_SSM;		//software management
+		SPIx->CR1 |= SPI_CR1_SSI;		//NSS pin takes on SSI's value == 1
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_SSM;		//hardware management
+
+	}
+}
+
+void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+	if (ssm_enable){
+		SPIx->CR1 |= SPI_CR1_SSM;
+	}
+	else{
+		SPIx->CR1 &= ~SPI_CR1_SSM;
+	}
+}
+
+//Enable SPI
+void hal_spi_enable(SPI_TypeDef *SPIx){
+	if (!(SPIx->CR1 & SPI_EN)){		//if SPI isn't enabled
+		SPIx->CR1 |= SPI_EN;
+	}
+}
+//Disable SPI
+void hal_spi_disable(SPI_TypeDef *SPIx){
+	SPIx->CR1 &= ~SPI_EN;
+}
+
+/******************************************************************************/
+/*                                                                            */
+/*                     	Interrupts											*/
+/******************************************************************************/
+
+/* Enabling interrupt for EMPTY TRANSMIT REG */
+void hal_spi_enable_txe_interrupt(SPI_TypeDef *SPIx){
+	SPIx->CR2 |= SPI_CR2_TXEIE;	//enabling TX buffer empty interrupt
+}
+
+/* Enabling interrupt for NON-EMPTY RECEIVE REG */
+void hal_spi_enable_rxne_interrupt(SPI_TypeDef *SPIx){
+	SPIx->CR2 |= SPI_CR2_RXNEIE;
+}
+
+/* Disabling the TX buffer empty interrupt (TXE) */
+void hal_spi_disable_txe_interrupt(SPI_TypeDef *SPIx){
+	SPIx->CR2 &= ~SPI_CR2_TXEIE;
+}
+/* Disabling the RX buffer non empty interrupt (RXNEIE) */
+void hal_spi_disable_rxne_interrupt(SPI_TypeDef *SPIx){
+	SPIx->CR2 &= ~SPI_CR2_RXNEIE;
+}
+
+
+/* 			-------HANDLERS--------			*/
+/* Closing TX transfer */
+void hal_spi_close_tx_interrupt(spi_handle_t *hspi){
+	//--------------
+	hal_spi_disable_txe_interrupt(hspi->Instance);
+	hspi->state = HAL_SPI_STATE_READY;
+}
+/* Closing RX transfer */
+void hal_spi_close_rx_interrupt(spi_handle_t *hspi){
+	//---------------
+	hal_spi_disable_rxne_interrupt(hspi->Instance);
+	hspi->state = HAL_SPI_STATE_READY;
+}
+
+/* Handles RXNE interrupt */
+void hal_spi_handle_rx_interrupt(spi_handle_t *hspi){
+	//receive data in 8-bit mode
+	if (hspi->Init.Data_Size == SPI_8_BIT_DFF_ENABLE){
+			*(hspi->rxBuffer) = hspi->Instance->DR; 	//reading off of a DR
+			hspi->rx_count--;
+		}
+	//receive data in 16-bit mode
+		else{
+			*((uint16_t*)hspi->rxBuffer) = hspi->Instance->DR;
+			hspi->rx_count-=2;
+		}
+
+	/*Done with the RXing of data; closing the RXNE interrupt */
+	if (hspi->rx_count == RESET){
+		hal_spi_close_rx_interrupt(hspi);
+	}
+
+}
+/* handling TX interrupt: TX_Buffer = empty(pushed to shift register); peripheral wants to put new data */
+void hal_spi_handle_tx_interrupt(spi_handle_t *hspi){
+
+	//transmit data in 8-bit mode
+	if (hspi->Init.Data_Size == SPI_8_BIT_DFF_ENABLE){
+		hspi->Instance->DR = *(hspi->txBuffer);
+		hspi->tx_count--;	//sent 1 byte
+	}
+	//transmit data in 16-bit mode
+	else{
+		hspi->Instance->DR = *((uint16_t*)hspi->txBuffer);
+		hspi->tx_count-=2;	//sent 2 bytes
+	}
+
+	if (hspi->tx_count == RESET){
+		/* close TXE interrupt */
+		hal_spi_close_tx_interrupt(hspi);
+	}
+
+}
+
+void hal_spi_irq_handler(spi_handle_t *hspi){
+
+	uint32_t temp1 = 0, temp2 = 0;
+
+	//checking if RXNE is set in SR
+	temp1 = (hspi->Instance->SR & SPI_SR_RXNE);
+	//checking if RXNEIE bit is enabled in CR
+	temp2 = (hspi->Instance->CR2 & SPI_CR2_RXNEIE);
+
+
+	if (temp1!= RESET && temp2!= RESET){
+		hal_spi_handle_rx_interrupt(hspi);	//handling RXNE interrupt
+		return;
+	}
+
+	//checking if TXE is set in SR
+	temp1 = (hspi->Instance->SR & SPI_SR_TXE);
+	//checking if RXNEIE bit is enabled in CR
+	temp2 = (hspi->Instance->CR2 & SPI_CR2_TXEIE);
+
+	if (temp1!= RESET && temp2!= RESET){
+		hal_spi_handle_tx_interrupt(hspi); //handling TXE interrupt
+		return;
+	}
+}
+
+
+
+/******************************************************************************/
+/*                                                                            */
+/*                      API functions                                 */
+/*                                                                            */
+/******************************************************************************/
+
+/* --- MASTER ---- */
+
+//API used for master data transmission
+void hal_spi_master_tx(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length){
+	spi_handle->txBuffer = tx_buffer;
+	spi_handle->TX_tranfer_size = length;
+	spi_handle->tx_count = length;
+
+	spi_handle->state = HAL_SPI_STATE_BUSY_TX; //setting the state for transmitting data
+	hal_spi_enable(spi_handle->Instance);	//enabling SPI communication
+
+	//data gets loaded onto the shift register -- TX buffer = empty
+	hal_spi_enable_txe_interrupt(spi_handle->Instance); //enabling TX interrupt for empty TX Buffer
+
+}
+//API used for master data reception
+void hal_spi_master_rx(spi_handle_t *spi_handle, uint8_t *rx_buffer, uint32_t length){
+	int32_t val;
+
+	/* dummy TX */
+	spi_handle->txBuffer = rx_buffer;
+	spi_handle->TX_tranfer_size = length;
+	spi_handle->tx_count = length;
+
+	/* Address of RX Buffer is stored*/
+	spi_handle->rxBuffer = rx_buffer;
+	spi_handle->RX_tranfer_size = length;
+	spi_handle->rx_count = length;
+
+	/*Driver is busy in RX */
+	spi_handle->state = HAL_SPI_STATE_BUSY_RX;
+
+	/* Enabling SPI Interrupt */
+	hal_spi_enable(spi_handle->Instance);
+
+	/* reading DR to see if it's empty */
+	val = spi_handle->Instance->DR;
+
+	/* Enabling both TXE and RXNE Interrupts */
+	hal_spi_enable_rxne_interrupt(spi_handle->Instance);
+	hal_spi_enable_txe_interrupt(spi_handle->Instance);
+}
+
+/* --- SLAVE ---- */
+// API for SLAVE data transmission
+void hal_spi_slave_tx(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length){
+
+	/* Address of RX Buffer is stored */
+	spi_handle->txBuffer = tx_buffer;
+	spi_handle->TX_tranfer_size = length;
+	spi_handle->tx_count = length;
+
+	/* Dummy RX -- receiving clock from the Master */
+	spi_handle->rxBuffer = tx_buffer;
+	spi_handle->RX_tranfer_size = length;
+	spi_handle->rx_count = length;
+
+	/*Driver is busy in TX */
+	spi_handle->state = HAL_SPI_STATE_BUSY_TX;
+
+	/* Enabling SPI Interrupt */
+	hal_spi_enable(spi_handle->Instance);
+
+	/* Enabling both TXE and RXNE Interrupts */
+	hal_spi_enable_rxne_interrupt(spi_handle->Instance);
+	hal_spi_enable_txe_interrupt(spi_handle->Instance);
+}
+
+// API for SLAVE data reception
+void hal_spi_slave_rx(spi_handle_t *spi_handle, uint8_t *rx_buffer, uint32_t length){
+	spi_handle->rxBuffer = rx_buffer;
+	spi_handle->RX_tranfer_size = length;
+	spi_handle->rx_count = length;
+
+	spi_handle->state = HAL_SPI_STATE_BUSY_RX;
+
+	/* Enabling SPI Interrupt */
+	hal_spi_enable(spi_handle->Instance);
+
+	/* Enabling RXNE Interrupt -- triggered when data is received from Master */
+	hal_spi_enable_rxne_interrupt(spi_handle->Instance);
+}
+
+
+
+
+
+
+
+

@@ -1,8 +1,7 @@
 /*
  * hal_spi_driver.h
  *
- *  Created on: Jul 3, 2018
- *      Author: huzaifaasif
+ *
  */
 
 #ifndef STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_
@@ -20,22 +19,22 @@
 
 #define RESET											0
 //Bidirectional data mode enable
-#define SPI_CR1_BIDIMODE 								(uint32_t) 1 << 15
+#define SPI_REG_CR1_BIDIMODE 							(uint32_t) 1 << 15
 #define SPI_ENABLE_2_LINE_UNI_DIR        				0
 #define SPI_ENABLE_1_LINE_BIDI           				1
 
 //Data frame format
-#define SPI_CR1_DFF										(uint32_t) 1 << 11
+#define SPI_REG_CR1_DFF									(uint32_t) 1 << 11
 #define SPI_8_BIT_DFF_ENABLE								0
 #define SPI_16_BIT_DFF_ENABLE							1
 
 //Software slave management
-#define SPI_CR1_SSM										(uint32_t) 1 << 9
+#define SPI_REG_CR1_SSM								  (uint32_t) 1 << 9
 #define SPI_CR1_SSM_DISABLE								0
 #define SPI_CR1_SSM_ENABLE								1
 
 // Internal slave select
-#define SPI_CR1_SSI 									   (uint32_t) 1 << 8
+#define SPI_REG_CR1_SSI 								  (uint32_t) 1 << 8
 
 // LSBFIRST -- Frame Format: Data can be shifted out either MSB-first or LSB-first depending on the value of the LSBFIRST bit in the SPI_CR1 Register.
 #define SPI_CR1_LSB_FIRST							   (uint32_t) 1 << 7
@@ -56,60 +55,60 @@
 #define SPI_CR1_BR_PCLK_DIV_256							(uint32_t) 7 << 3
 
 //Master selection
-#define SPI_CR1_MSTR										(uint32_t) 1 << 2
+#define SPI_REG_CR1_MSTR									(uint32_t) 1 << 2
 #define SPI_SLAVE_MODE_SEL								0
 #define SPI_MASTER_MODE_SEL								1
 
 //CLOCK POLARITY
-#define SPI_CR1_CPOL										(uint32_t) 1 << 1
+#define SPI_REG_CR1_CPOL									(uint32_t) 1 << 1
 #define SPI_CPOL_LOW										0
 #define SPI_CPOL_HIGH									1
 
 //CLOCK PHASE
-#define SPI_CR1_CPHA									(uint32_t) 1 << 0
+#define SPI_REG_CR1_CPHA									(uint32_t) 1 << 0
 #define SPI_LEADING_CLK									0
 #define SPI_TRAILING_CLK									1
 
 
 /*******************  Bit definition for SPI_CR2 register  ********************/
 // TX buffer empty interrupt enable
-#define SPI_CR2_TXEIE								(uint32_t) 1 << 7
+#define SPI_REG_CR2_TXEIE								(uint32_t) 1 << 7
 #define SPI_TXE_INT_MASKED							0
 #define SPI_TXE_INT_UNMASKED							1
 
 //RX buffer not empty interrupt enable
-#define SPI_CR2_RXNEIE								(uint32_t) 1 << 6
+#define SPI_REG_CR2_RXNEIE								(uint32_t) 1 << 6
 #define SPI_RXNEIE_INT_MASKED						0
 #define SPI_RXNEIE_INT_UNMASKED						1
 
 // Error interrupt enable
-#define SPI_CR2_ERRIE								(uint32_t) 1 << 5
+#define SPI_REG_CR2_ERRIE								(uint32_t) 1 << 5
 #define SPI_ERR_INT_MASKED							0
 #define SPI_ERR_INT_UNMASKED							1
 
 // FRAME FORMAT
-#define SPI_CR2_ERRIE								(uint32_t) 1 << 4
+#define SPI_REG_CR2_FRAME_FORMAT							(uint32_t) 1 << 4
 #define SPI_MOTOROLA_MODE							0
 #define SPI_TI_MODE									1
 
 //  SS output enable
-#define SPI_CR2_ERRIE								(uint32_t) 1 << 2
+#define SPI_REG_CR2_SSOE								(uint32_t) 1 << 2
 
 /*******************  Bit definition for SPI_SR (STATUS_REG) register  ********************/
 //  Frame format error
-#define SPI_SR_FRE									(uint32_t) 1 << 8
+#define SPI_REG_SR_FRE									(uint32_t) 1 << 8
 
 //BUSY FLAG
-#define SPI_SR_BSY									(uint32_t) 1 << 7
+#define SPI_REG_SR_BSY									(uint32_t) 1 << 7
 
 //OVERRUN FLAG
-#define SPI_SR_OVR									(uint32_t) 1 << 6
+#define SPI_REG_SR_OVR									(uint32_t) 1 << 6
 
 //TRANSMIT BUFFER EMPTY
-#define SPI_SR_TXE									(uint32_t) 1 << 1
+#define SPI_REG_SR_TXE									(uint32_t) 1 << 1
 
 //RECEIVE BUFFER NOT EMPTY
-#define SPI_SR_RXNE									(uint32_t) 1 << 0
+#define SPI_REG_SR_RXNE									(uint32_t) 1 << 0
 
 /* Macros to Enable Clock for SPI devices */
 #define _HAL_RCC_SPI1_CLK_ENABLE()				    RCC->APB2ENR |= 1 << 12
@@ -163,11 +162,20 @@ typedef struct __spi_handle_t {
 /*                      3. Driver exposed APIs                                   */
 /*                                                                            */
 /******************************************************************************/
+/* --- */
+//void hal_spi_config_device_mode(SPI_TypeDef *SPIx, uint32_t master);
+//void hal_spi_config_phase_polarity(SPI_TypeDef *SPIx, uint32_t phase, uint32_t polarity){;
+//void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first);
+//void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable);
+//void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable);
 
+/* --- */
 void hal_spi_init(spi_handle_t *spi_handle);
 
 void hal_spi_irq_handler(spi_handle_t *hspi);
 
 void hal_spi_master_tx(spi_handle_t *spi_handle, uint8_t *buffer, uint32_t length);
+
+void hal_spi_master_rx(spi_handle_t *spi_handle, uint8_t *rx_buffer, uint32_t length);
 
 #endif /* STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_ */
