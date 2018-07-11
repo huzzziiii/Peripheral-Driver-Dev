@@ -1281,3 +1281,1042 @@ arm-none-eabi-size "GPIO_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
    1052	      8	   1568	   2628	    a44	GPIO_Drivers.elf
  
+20:59:25 **** Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	GPIO_Drivers.elf
+ 
+21:09:37 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'EXTI15_10_IRQHandler':
+../Src/main.c:10:2: warning: implicit declaration of function 'hal_gpio_clear_interrupt' [-Wimplicit-function-declaration]
+  hal_gpio_clear_interrupt(GPIO_BUTTON_PIN);
+  ^
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1196	      8	   1568	   2772	    ad4	GPIO_Drivers.elf
+ 
+21:10:17 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1196	      8	   1568	   2772	    ad4	GPIO_Drivers.elf
+ 
+21:10:25 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+21:12:34 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+21:13:59 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+21:30:10 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1196	      8	   1568	   2772	    ad4	GPIO_Drivers.elf
+ 
+21:32:49 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+21:33:36 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1184	      8	   1568	   2760	    ac8	GPIO_Drivers.elf
+ 
+21:36:09 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	GPIO_Drivers.elf
+ 
+22:20:21 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1184	      8	   1568	   2760	    ac8	GPIO_Drivers.elf
+ 
+18:34:06 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:20:2: warning: implicit declaration of function 'button_init' [-Wimplicit-function-declaration]
+  button_init();
+  ^
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:36:17 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:39:02 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:41:14 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:41:42 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1208	      8	   1568	   2784	    ae0	GPIO_Drivers.elf
+ 
+18:42:10 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:46:11 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:47:39 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:51:02 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+19:06:00 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1272	      8	   1568	   2848	    b20	GPIO_Drivers.elf
+ 
+19:06:16 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+19:06:31 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+19:09:06 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1272	      8	   1568	   2848	    b20	GPIO_Drivers.elf
+ 
+19:10:40 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1272	      8	   1568	   2848	    b20	GPIO_Drivers.elf
+ 
+19:14:15 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1272	      8	   1568	   2848	    b20	GPIO_Drivers.elf
+ 
+19:41:47 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+17:47:47 **** Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'EXTI15_10_IRQHandler':
+../Src/main.c:11:2: warning: implicit declaration of function '__HAL_GPIO_EXTI_CLEAR_IT' [-Wimplicit-function-declaration]
+  __HAL_GPIO_EXTI_CLEAR_IT(GPIO_BUTTON_PIN);
+  ^
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Src/main.o: In function `EXTI15_10_IRQHandler':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug/../Src/main.c:11: undefined reference to `__HAL_GPIO_EXTI_CLEAR_IT'
+collect2: error: ld returned 1 exit status
+make: *** [GPIO_Drivers.elf] Error 1
+17:51:08 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1220	      8	   1568	   2796	    aec	GPIO_Drivers.elf
+ 
+17:51:15 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:52:39 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1220	      8	   1568	   2796	    aec	GPIO_Drivers.elf
+ 
+18:00:32 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1168	      8	   1568	   2744	    ab8	GPIO_Drivers.elf
+ 
+18:00:39 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:01:32 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1220	      8	   1568	   2796	    aec	GPIO_Drivers.elf
+ 
+18:02:32 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:04:17 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:04:29 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:04:45 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:26:26 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+18:30:57 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1272	      8	   1568	   2848	    b20	GPIO_Drivers.elf
+ 
+18:39:49 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1224	      8	   1568	   2800	    af0	GPIO_Drivers.elf
+ 
+18:54:26 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1252	      8	   1568	   2828	    b0c	GPIO_Drivers.elf
+ 
+19:25:55 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1248	      8	   1568	   2824	    b08	GPIO_Drivers.elf
+ 
+19:27:05 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+19:27:24 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+19:29:58 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1268	      8	   1568	   2844	    b1c	GPIO_Drivers.elf
+ 
+19:30:34 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1288	      8	   1568	   2864	    b30	GPIO_Drivers.elf
+ 
+19:34:58 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1268	      8	   1568	   2844	    b1c	GPIO_Drivers.elf
+ 
+19:40:03 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1244	      8	   1568	   2820	    b04	GPIO_Drivers.elf
+ 
+19:52:13 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1272	      8	   1568	   2848	    b20	GPIO_Drivers.elf
+ 
+20:02:39 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1268	      8	   1568	   2844	    b1c	GPIO_Drivers.elf
+ 
+20:02:48 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+22:36:46 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1268	      8	   1568	   2844	    b1c	GPIO_Drivers.elf
+ 
+00:55:15 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+09:50:20 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1264	      8	   1568	   2840	    b18	GPIO_Drivers.elf
+ 
+09:51:23 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1284	      8	   1568	   2860	    b2c	GPIO_Drivers.elf
+ 
+10:20:12 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1256	      8	   1568	   2832	    b10	GPIO_Drivers.elf
+ 
+10:38:38 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1284	      8	   1568	   2860	    b2c	GPIO_Drivers.elf
+ 
+10:38:48 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+10:40:23 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+10:40:59 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+10:59:08 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+make all 
+Building file: ../Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
+Finished building: ../Src/led.c
+ 
+Building target: GPIO_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "GPIO_Drivers.elf" @"objects.list"  
+Finished building target: GPIO_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
+arm-none-eabi-size "GPIO_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1284	      8	   1568	   2860	    b2c	GPIO_Drivers.elf
+ 

@@ -7,16 +7,24 @@
 //#include "stm32f4xx_gpio_driver.h"
 
 void EXTI15_10_IRQHandler(void){
+	//
+//	__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_13);
+	hal_gpio_clear_interrupt(GPIO_PIN_13);
 	led_toggle(GPIOA, GPIO_PIN_5);
+
 }
 
 int main(void){
 	led_init();
 
-	hal_gpio_configure_interrupt(GPIO_BUTTON_PIN, INT_FALLING_EDGE);
-	hal_gpio_enable_interrupt(GPIO_BUTTON_PIN, EXTI15_10_IRQn);
+	button_init();
+
+	while(1){
+		/* wait for the interrupt */
+	}
 
 
 	return 0;
 
 }
+

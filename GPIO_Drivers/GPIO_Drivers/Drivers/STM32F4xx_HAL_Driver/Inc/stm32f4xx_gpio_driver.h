@@ -42,6 +42,8 @@
 #define _HAL_RCC_GPIOE_CLK_ENABLE() 	RCC->AHB1ENR |= (1 << 4)
 #define _HAL_RCC_GPIOH_CLK_ENABLE() 	RCC->AHB1ENR |= (1 << 6)
 
+
+#define __HAL_GPIO_EXTI_CLEAR_IT(__EXTI_LINE__) (EXTI->PR = (__EXTI_LINE__))
 /*
  * 		DATA STRUCTURE FOR GPIO PIN INITIALIZATION
  *
@@ -71,7 +73,7 @@ typedef enum{
  */
 void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_select edge_sel);
 void hal_gpio_enable_interrupt(uint16_t pin_no, IRQn_Type irq_no);
-void hal_gpio_clear_interrupts(uint16_t pin);
+void hal_gpio_clear_interrupt(uint16_t pin);
 
 
 /*
