@@ -24,12 +24,10 @@ void hal_gpio_enable_interrupt(uint16_t pin_no, IRQn_Type irq_no){
 
 }
 
-
 //clearing the pending bit in PR if interrupt has occurred on the specified pin
 void hal_gpio_clear_interrupt(uint16_t pin_no){
 	if (EXTI->PR & (1<<pin_no)){
-		EXTI->PR |= 1 << pin_no;			//clearing the bit
-
+		EXTI->PR |= 1 << pin_no;	//clearing the bit
 	}
 }
 

@@ -8,12 +8,8 @@
 #define LED_H_
 
 #define GPIO_PIN_5			5		//LED -- PA5
-#define GPIO_PIN_13  		(uint16_t) 13
-//#define GPIO_PIN_13                ((uint16_t)0x2000)
 
 void led_init(void);
-void button_init(void);
-
 void led_turn_on(GPIO_TypeDef *GPIOx, uint16_t pin);
 void led_turn_off(GPIO_TypeDef *GPIOx, uint16_t pin);
 void led_toggle(GPIO_TypeDef *GPIOx, uint16_t pin);

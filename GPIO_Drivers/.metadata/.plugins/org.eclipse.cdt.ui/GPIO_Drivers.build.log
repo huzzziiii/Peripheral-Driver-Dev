@@ -1,10 +1,10 @@
-10:59:08 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
+14:37:42 **** Incremental Build of configuration Debug for project GPIO_Drivers ****
 make all 
-Building file: ../Src/led.c
+Building file: ../Src/main.c
 Invoking: MCU GCC Compiler
 /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/led.d" -MT"Src/led.o" -o "Src/led.o" "../Src/led.c"
-Finished building: ../Src/led.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/GPIO_Drivers/GPIO_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
  
 Building target: GPIO_Drivers.elf
 Invoking: MCU GCC Linker
@@ -16,8 +16,8 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "GPIO_Drivers.elf" "GPIO_Drivers.bin"
 arm-none-eabi-size "GPIO_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
-   1284	      8	   1568	   2860	    b2c	GPIO_Drivers.elf
+   1052	      8	   1568	   2628	    a44	GPIO_Drivers.elf
  
 
-10:59:11 Build Finished (took 2s.822ms)
+14:37:45 Build Finished (took 3s.163ms)
 
