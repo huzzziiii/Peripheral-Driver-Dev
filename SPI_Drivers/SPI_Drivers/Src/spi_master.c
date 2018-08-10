@@ -16,10 +16,11 @@ void spi_gpio_init(void){
 	GPIO_PIN_CONFIG spi_conf;
 
 	_HAL_RCC_SPI2_CLK_ENABLE();		//SPI2 CLK
+	_HAL_RCC_GPIOB_CLK_ENABLE();
 
 	/* configure GPIOB_PIN_13 for SPI CLK functionality */
 	spi_conf.pin = SPI_CLK_PIN;			   //PIN 13
-	spi_conf.mode = GPIO_PIN_ALT_FUN_MODE; //Alternate mode is used for comm. protocols like SPI, I2C
+	spi_conf.mode = GPIO_PIN_ALT_FUN_MODE; //Alternate mode is used for communication protocols like SPI, I2C
 
 	spi_conf.op_type = GPIO_PUSH_PULL;
 	spi_conf.pull = GPIO_PULL_DOWN;
@@ -44,10 +45,25 @@ void spi_gpio_init(void){
 	hal_gpio_init(GPIOB,&spi_conf);
 }
 
+void slave_config(void){
+	GPIO_PIN_CONFIG led_pin_config;
+	_HAL_RCC_GPIOD_CLK_ENABLE();
+
+	led_pin_config.pin = GPIO_PIN_10;
+	led_pin_config.mode = GPIO_PIN_OUTPUT_MODE;
+	led_pin_config.op_type = GPIO_PUSH_PULL;
+	led_pin_config.speed = GPIO_MEDIUM_SPEED;
+	led_pin_config.pull = GPIO_NO_PUPD;
+
+	//configuring LED
+	hal_gpio_init(GPIOD, &led_pin_config);
+}
+
 /* Handler for the PUSH BUTTON (EXTI = 13) */
 void EXTI15_10_IRQHandler(void){
 	//clearing out the pending bit for this interrupt
 	hal_gpio_clear_interrupt(GPIO_PIN_13);
+
 	buttonPressed = true;
 	led_toggle(GPIOA,GPIO_PIN_5);
 }
@@ -72,7 +88,7 @@ int main(void){
 	/* Configuring LED GPIO */
 	led_init();
 
-	/* Configuring Push Button interrupt */
+	/* Configuring Push Button interrupt -- PC13*/
 	button_init();
 	hal_gpio_configure_interrupt(GPIO_PIN_13, INT_FALLING_EDGE); // @suppress("Symbol is not resolved")
 	hal_gpio_enable_interrupt(GPIO_PIN_13, EXTI15_10_IRQn);
@@ -90,30 +106,37 @@ int main(void){
 	spiHandle.Init.NSS = SPI_CR1_SSM_ENABLE;
 	spiHandle.Init.Mode = SPI_MASTER_MODE_SEL;
 
-//	spiHandle.state = HAL_SPI_STATE_READY;
+	spiHandle.state = HAL_SPI_STATE_READY;
 
 //	/* Initializing SPI device */
 	hal_spi_init(&spiHandle);
 
-//	/* Enable IRQ in the NVIC */
-	NVIC_EnableIRQ(SPI2_IRQn);
+//	/* Enable IRQ for SPI in the NVIC */
+	//NVIC_EnableIRQ(SPI2_IRQn);
 //
 //	/******************************************************************************/
 //	/*                                                                            */
 //	/*                        Master command sending code                         */
 //	/*                         Write and read commands                            */
 //	/******************************************************************************/
-	hal_gpio_write_to_pin(GPIOB, 0, SPI_CLK_PIN);
+//	hal_gpio_write_to_pin(GPIOD, 0, GPIO_PIN_10);
 
 	while(1){
 		data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
 		data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
 
 		//spiHandle.txBuffer = data;
-		hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
+		int i=0;
+
+		while(i<CMD_LENGTH) {
+			tx_handler(&spiHandle, data, CMD_LENGTH);
+			i++;
+		}
+
+		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
 
 		/* master write command to slave */
-		while(spiHandle.state != HAL_SPI_STATE_READY);
+		while(spiHandle.state != HAL_SPI_STATE_READY);		//continues here forever!?!?!??
 
 		hal_spi_master_rx(&spiHandle, ack_buf, ACK_LENGTH);
 

@@ -14,9 +14,12 @@
 #define GPIO_PIN_15			15
 
 /* Macros used for configuring GPIOs */
-#define SPI_CLK_PIN		GPIO_PIN_13
-#define SPI_MISO_PIN		GPIO_PIN_14
-#define SPI_MOSI_PIN		GPIO_PIN_15
+//#define SPI_CLK_PIN		GPIO_PIN_13
+#define SPI_CLK_PIN			10
+//#define SPI_MISO_PIN		GPIO_PIN_14
+#define SPI_MISO_PIN			2
+//#define SPI_MOSI_PIN		GPIO_PIN_15
+#define SPI_MOSI_PIN			3
 
 /* Variables used for storing data */
 #define CMD_MASTER_WRITE			0x1357

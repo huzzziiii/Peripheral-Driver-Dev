@@ -23,7 +23,7 @@ void hal_spi_init(spi_handle_t *spi_handle){
 		hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
 	}
 
-	/* configure SPI device need */
+	/* configure SPI device baud rate */
 	hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
 
 	/* configure the SPI device direction */
@@ -38,11 +38,14 @@ void hal_spi_init(spi_handle_t *spi_handle){
 
 /* Configures SPI baudrate */
 void hal_spi_configure_baudrate(SPI_TypeDef *SPIx, uint32_t prescalar){
-	if (prescalar > 7){
-		SPIx->CR1 |= (0 << 3);
-	}else{
-		SPIx->CR1 |= prescalar << 3;
-	}
+	SPIx->CR1 &= ~(7 << 3);
+	SPIx->CR1 |= prescalar;
+
+//	if (prescalar > 7){
+//		SPIx->CR1 |= (0 << 3);		///  &= ??
+//	}else{
+//		SPIx->CR1 |= prescalar << 3;
+//	}
 }
 
 /* Configures SPI direction */
@@ -178,7 +181,7 @@ void hal_spi_handle_rx_interrupt(spi_handle_t *hspi){
 	if (hspi->Init.Data_Size == SPI_8_BIT_DFF_ENABLE){
 			*(hspi->rxBuffer) = hspi->Instance->DR; 	//reading off of a DR
 			hspi->rx_count--;
-		}
+	}
 	//receive data in 16-bit mode
 		else{
 			*((uint16_t*)hspi->rxBuffer) = hspi->Instance->DR;
@@ -196,7 +199,7 @@ void hal_spi_handle_tx_interrupt(spi_handle_t *hspi){
 
 	//transmit data in 8-bit mode
 	if (hspi->Init.Data_Size == SPI_8_BIT_DFF_ENABLE){
-		hspi->Instance->DR = *(hspi->txBuffer)++;
+		hspi->Instance->DR = *hspi->txBuffer++;	//MISO -- TX != empty
 		hspi->tx_count--;	//sent 1 byte
 	}
 	//transmit data in 16-bit mode
@@ -209,30 +212,57 @@ void hal_spi_handle_tx_interrupt(spi_handle_t *hspi){
 		/* close TXE interrupt */
 		hal_spi_close_tx_interrupt(hspi);
 	}
-	hal_spi_enable_txe_interrupt(hspi->Instance);
+
+}
+//----------------------------------------
+void send_rcv(spi_handle_t *hspi){
+	if (hspi->txBuffer) hspi->Instance->DR = *hspi->txBuffer++;	//fill in DR -- TX != empty
+
+	//uint32_t txe_delay = SPI_SR_TXE;		//data from DR ----> MOSI (TX == EMPTY)
+	//uint32_t rxne_delay = SPI_SR_RXNE;		//data from MISO ---> DR	  (RX !=empty)
+	while( (hspi->Instance->SR & SPI_SR_TXE) == 0 ){}
+	while(!(hspi->Instance->SR & SPI_SR_RXNE)){}
+
+	uint32_t val = hspi->Instance->DR;
+
 }
 
+void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size){
+	uint32_t temp=0;
+	hspi->txBuffer = txBuffer;
+	hspi->TX_tranfer_size = size;
+
+	//checking if TXE is set in SR -- Ready to write (TX buffer = empty)
+	temp = hspi->Instance->SR & (SPI_SR_TXE);
+
+	if ( temp!=0){	//when TX = EMPTY, fill in TX buffer
+		send_rcv(hspi);
+	}
+}
+
+
+//----------------------------------------
 void hal_spi_irq_handler(spi_handle_t *hspi){
 
 	uint32_t temp1 = 0, temp2 = 0;
 
-	//checking if RXNE is set in SR
+	//checking if RXNE is set in SR -- Ready to read in data (RX buffer != empty)
 	temp1 = (hspi->Instance->SR & SPI_SR_RXNE);
 	//checking if RXNEIE bit is enabled in CR
 	temp2 = (hspi->Instance->CR2 & SPI_CR2_RXNEIE);
 
 
-	if (temp1!= RESET && temp2!= RESET){
+	if (temp1!= RESET && temp2!= RESET){		//ready to READ in a data
 		hal_spi_handle_rx_interrupt(hspi);	//handling RXNE interrupt
 		return;
 	}
 
-	//checking if TXE is set in SR
+	//checking if TXE is set in SR -- Ready to write (TX buffer = empty)
 	temp1 = (hspi->Instance->SR & SPI_SR_TXE);
 	//checking if TXEIE bit is enabled in CR
 	temp2 = (hspi->Instance->CR2 & SPI_CR2_TXEIE);
 
-	if (temp1!= RESET && temp2!= RESET){
+	if (temp1!= RESET && temp2!= RESET){	   //ready to WRITE
 		hal_spi_handle_tx_interrupt(hspi); //handling TXE interrupt
 		return;
 	}
@@ -248,6 +278,8 @@ void hal_spi_irq_handler(spi_handle_t *hspi){
 
 /* --- MASTER ---- */
 
+
+
 //API used for master data transmission
 void hal_spi_master_tx(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length){
 	spi_handle->txBuffer = tx_buffer;
@@ -255,10 +287,10 @@ void hal_spi_master_tx(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t le
 	spi_handle->tx_count = length;
 
 	spi_handle->state = HAL_SPI_STATE_BUSY_TX; //setting the state for transmitting data
-	hal_spi_enable(spi_handle->Instance);	//enabling SPI communication
 
 	//current data gets loaded onto the shift register -- TX buffer = empty
 	hal_spi_enable_txe_interrupt(spi_handle->Instance); //enabling TX interrupt for empty TX Buffer
+	hal_spi_enable(spi_handle->Instance);	//enabling SPI communication
 
 }
 //API used for master data reception

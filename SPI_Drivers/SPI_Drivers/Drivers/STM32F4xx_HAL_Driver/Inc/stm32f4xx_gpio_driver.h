@@ -17,7 +17,7 @@
 //GPIO Mode Setting values
 #define GPIO_PIN_INPUT_MODE 			(uint32_t) 0x00
 #define GPIO_PIN_OUTPUT_MODE			(uint32_t) 0x01
-#define GPIO_PIN_ALT_FUN_MODE 		(uint32_t) 0x10
+#define GPIO_PIN_ALT_FUN_MODE 		(uint32_t) 0x102
 
 //GPIO Port Output Type
 #define GPIO_PUSH_PULL				(uint32_t) 0x00
@@ -26,13 +26,13 @@
 //GPIO OUTPUT SPEED
 #define GPIO_LOW_SPEED				(uint32_t) 0x00
 #define GPIO_MEDIUM_SPEED			(uint32_t) 0x01
-#define GPIO_FAST_SPEED				(uint32_t) 0x10
-#define GPIO_HIGH_SPEED				(uint32_t) 0x11
+#define GPIO_FAST_SPEED				(uint32_t) 0x02
+#define GPIO_HIGH_SPEED				(uint32_t) 0x03
 
 //GPIOI PUPD
 #define GPIO_NO_PUPD					(uint32_t) 0x00
 #define GPIO_PULL_UP					(uint32_t) 0x01
-#define GPIO_PULL_DOWN				(uint32_t) 0x10
+#define GPIO_PULL_DOWN				(uint32_t) 0x02
 
 //ENABLE CLOCKS
 #define _HAL_RCC_GPIOA_CLK_ENABLE() 	RCC->AHB1ENR |= (1 << 0)

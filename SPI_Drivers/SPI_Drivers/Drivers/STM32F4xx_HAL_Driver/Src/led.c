@@ -21,7 +21,7 @@ void led_init(void){
 
 void button_init(void){
 	GPIO_PIN_CONFIG button_config;
-	_HAL_RCC_GPIOC_CLK_ENABLE();
+	_HAL_RCC_GPIOC_CLK_ENABLE();		//PC13
 
 	RCC->APB2ENR |= 0x00004000;
 	SYSCFG->EXTICR[3] &= ~(0x0FU << 4U);

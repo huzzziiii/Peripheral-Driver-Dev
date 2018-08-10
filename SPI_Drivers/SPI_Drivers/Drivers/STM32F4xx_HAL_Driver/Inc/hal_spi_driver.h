@@ -178,4 +178,8 @@ void hal_spi_master_tx(spi_handle_t *spi_handle, uint8_t *buffer, uint32_t lengt
 
 void hal_spi_master_rx(spi_handle_t *spi_handle, uint8_t *rx_buffer, uint32_t length);
 
+void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+
+void send_rcv(spi_handle_t *hspi);
+
 #endif /* STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_ */
