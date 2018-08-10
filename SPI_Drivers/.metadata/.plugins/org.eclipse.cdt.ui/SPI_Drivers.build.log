@@ -1,16 +1,23 @@
-00:03:39 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+17:51:52 **** Incremental Build of configuration Debug for project SPI_Drivers ****
 make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:130:12: warning: unused variable 'txBuffer' [-Wunused-variable]
+   uint8_t *txBuffer = data;
+            ^
+../Src/spi_master.c:83:10: warning: unused variable 'ack_buf' [-Wunused-variable]
+  uint8_t ack_buf[2];
+          ^
+Finished building: ../Src/spi_master.c
+ 
 Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
 Invoking: MCU GCC Compiler
 /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c"
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_init':
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:11:2: warning: implicit declaration of function 'hal_spi_config_device_mode' [-Wimplicit-function-declaration]
-  hal_spi_config_device_mode(spi_handle->Instance, spi_handle->Init.Mode);
-  ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:14:2: warning: implicit declaration of function 'hal_spi_config_phase_polarity' [-Wimplicit-function-declaration]
-  hal_spi_config_phase_polarity(spi_handle->Instance, spi_handle->Init.CLK_Phase, spi_handle->Init.CLK_Polarity);
-  ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: warning: implicit declaration of function 'hal_spi_config_data_size_direction' [-Wimplicit-function-declaration]
   hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
   ^
@@ -27,54 +34,46 @@ arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D
   hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
   ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: At top level:
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:40:6: warning: conflicting types for 'hal_spi_configure_baudrate'
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:43:6: warning: conflicting types for 'hal_spi_configure_baudrate'
  void hal_spi_configure_baudrate(SPI_TypeDef *SPIx, uint32_t prescalar){
       ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: note: previous implicit declaration of 'hal_spi_configure_baudrate' was here
   hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
   ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:52:6: warning: conflicting types for 'hal_spi_configure_direction'
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:55:6: warning: conflicting types for 'hal_spi_configure_direction'
  void hal_spi_configure_direction(SPI_TypeDef *SPIx, uint32_t direction){
       ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: note: previous implicit declaration of 'hal_spi_configure_direction' was here
   hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
   ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:64:6: warning: conflicting types for 'hal_spi_config_device_mode'
- void hal_spi_config_device_mode(SPI_TypeDef *SPIx, uint32_t master){
-      ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:11:2: note: previous implicit declaration of 'hal_spi_config_device_mode' was here
-  hal_spi_config_device_mode(spi_handle->Instance, spi_handle->Init.Mode);
-  ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:73:6: warning: conflicting types for 'hal_spi_config_phase_polarity'
- void hal_spi_config_phase_polarity(SPI_TypeDef *SPIx, uint32_t phase, uint32_t polarity){
-      ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:14:2: note: previous implicit declaration of 'hal_spi_config_phase_polarity' was here
-  hal_spi_config_phase_polarity(spi_handle->Instance, spi_handle->Init.CLK_Phase, spi_handle->Init.CLK_Polarity);
-  ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:90:6: warning: conflicting types for 'hal_spi_config_data_size_direction'
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:93:6: warning: conflicting types for 'hal_spi_config_data_size_direction'
  void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first){
       ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: note: previous implicit declaration of 'hal_spi_config_data_size_direction' was here
   hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
   ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:107:6: warning: conflicting types for 'hal_spi_config_nss_master'
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:110:6: warning: conflicting types for 'hal_spi_config_nss_master'
  void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable){
       ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: note: previous implicit declaration of 'hal_spi_config_nss_master' was here
    hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
    ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:118:6: warning: conflicting types for 'hal_spi_config_nss_slave'
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:121:6: warning: conflicting types for 'hal_spi_config_nss_slave'
  void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable){
       ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: note: previous implicit declaration of 'hal_spi_config_nss_slave' was here
    hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
    ^
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'send_rcv':
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:226:11: warning: unused variable 'val' [-Wunused-variable]
-  uint32_t val = hspi->Instance->DR;
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'begin_spi':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:227:11: warning: unused variable 'val' [-Wunused-variable]
+  uint32_t val = hspi->Instance->DR; //read out from DR -- RX buffer = empty (RXNE = 0)
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'tx_handler':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:232:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32_t temp=0;
            ^
 ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_master_rx':
-../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:298:10: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:310:10: warning: variable 'val' set but not used [-Wunused-but-set-variable]
   int32_t val;
           ^
 Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
@@ -89,8 +88,8 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
 arm-none-eabi-size "SPI_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
-   2208	      8	   1624	   3840	    f00	SPI_Drivers.elf
+   2124	      8	   1624	   3756	    eac	SPI_Drivers.elf
  
 
-00:03:41 Build Finished (took 1s.361ms)
+17:51:56 Build Finished (took 4s.342ms)
 

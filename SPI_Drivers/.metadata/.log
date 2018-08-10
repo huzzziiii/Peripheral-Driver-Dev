@@ -5344,3 +5344,135 @@ java.lang.Exception: Warning:\nCannot insert hardware breakpoint 4.\nCould not i
 
 !ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 00:01:01.191
 !MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 00:18:32.468
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 00:49:27.213
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 00:54:30.135
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 00:56:49.892
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 01:24:05.790
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-08-10 01:39:45.532
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@76a72e11): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Context cannot be suspended. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2018-08-10 01:39:45.532
+!MESSAGE Context cannot be suspended.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2018-08-10 01:39:45.557
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-continue
+
+Error message from debugger back end:
+Warning:\nCannot insert hardware breakpoint 2.\nCould not insert hardware breakpoints:\nYou may have requested too many hardware breakpoints/watchpoints.\n
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:228)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:101)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:90)
+	at fr.ac6.mcu.debug.launching.MCUGDBJtagDSFLaunchConfigurationDelegate.launch(MCUGDBJtagDSFLaunchConfigurationDelegate.java:102)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.Exception: Warning:\nCannot insert hardware breakpoint 2.\nCould not insert hardware breakpoints:\nYou may have requested too many hardware breakpoints/watchpoints.\n
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:943)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-08-10 01:39:45.558
+!MESSAGE Failed to execute MI command:
+-exec-continue
+
+Error message from debugger back end:
+Warning:\nCannot insert hardware breakpoint 2.\nCould not insert hardware breakpoints:\nYou may have requested too many hardware breakpoints/watchpoints.\n
+!STACK 0
+java.lang.Exception: Warning:\nCannot insert hardware breakpoint 2.\nCould not insert hardware breakpoints:\nYou may have requested too many hardware breakpoints/watchpoints.\n
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:943)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 01:39:46.104
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 01:44:07.368
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 01:44:37.212
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 01:48:30.266
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 11:08:54.331
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 11:43:30.733
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 12:18:37.711
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 12:22:52.122
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 12:24:58.916
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 12:29:46.548
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2018-08-10 15:23:16.878
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select remote localhost:3333
+
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:228)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:101)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:90)
+	at fr.ac6.mcu.debug.launching.MCUGDBJtagDSFLaunchConfigurationDelegate.launch(MCUGDBJtagDSFLaunchConfigurationDelegate.java:102)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.Exception: Remote communication error.  Target disconnected.: Connection reset by peer.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:943)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-08-10 15:23:16.879
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+!STACK 0
+java.lang.Exception: Remote communication error.  Target disconnected.: Connection reset by peer.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:943)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:772)
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 15:25:01.956
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 15:32:36.792
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 15:47:29.955
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 16:31:12.386
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 16:36:42.452
+!MESSAGE getFlasherLocation() usage is deprecated
+
+!ENTRY fr.ac6.mcu.externaltools 4 0 2018-08-10 17:47:38.915
+!MESSAGE getFlasherLocation() usage is deprecated

@@ -93,7 +93,6 @@ int main(void){
 	hal_gpio_configure_interrupt(GPIO_PIN_13, INT_FALLING_EDGE); // @suppress("Symbol is not resolved")
 	hal_gpio_enable_interrupt(GPIO_PIN_13, EXTI15_10_IRQn);
 
-	//while(1){}
 
 	/* Populating SPI HANDLER */
 	spiHandle.Instance = SPI2;
@@ -111,8 +110,9 @@ int main(void){
 //	/* Initializing SPI device */
 	hal_spi_init(&spiHandle);
 
+
 //	/* Enable IRQ for SPI in the NVIC */
-	//NVIC_EnableIRQ(SPI2_IRQn);
+	NVIC_EnableIRQ(SPI2_IRQn);
 //
 //	/******************************************************************************/
 //	/*                                                                            */
@@ -125,20 +125,17 @@ int main(void){
 		data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
 		data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
 
-		//spiHandle.txBuffer = data;
-		int i=0;
+		//tx_handler(&spiHandle, txBuffer, CMD_LENGTH); // start BLOCKING SPI communication
 
-		while(i<CMD_LENGTH) {
-			tx_handler(&spiHandle, data, CMD_LENGTH);
-			i++;
-		}
+		//--------------------------------------------
 
 		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
+		interrupts_SPI_transfer(&spiHandle, data, CMD_LENGTH);	//start NONBLOCKING SPI communication
 
-		/* master write command to slave */
-		while(spiHandle.state != HAL_SPI_STATE_READY);		//continues here forever!?!?!??
+		/* WAIT TILL TRANSFER IS COMPLETE */
+		while(spiHandle.state != HAL_SPI_STATE_READY);
 
-		hal_spi_master_rx(&spiHandle, ack_buf, ACK_LENGTH);
+	//	hal_spi_master_rx(&spiHandle, ack_buf, ACK_LENGTH);
 
 
 	}

@@ -28,6 +28,9 @@ void hal_spi_init(spi_handle_t *spi_handle){
 
 	/* configure the SPI device direction */
 	hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+
+	/* ENABLING SPI */
+	//hal_spi_enable(spi_handle->Instance);
 }
 
 /******************************************************************************/
@@ -166,7 +169,7 @@ void hal_spi_disable_rxne_interrupt(SPI_TypeDef *SPIx){
 void hal_spi_close_tx_interrupt(spi_handle_t *hspi){
 	//--------------
 	hal_spi_disable_txe_interrupt(hspi->Instance);
-	hspi->state = HAL_SPI_STATE_READY;
+	//hspi->state = HAL_SPI_STATE_READY;
 }
 /* Closing RX transfer */
 void hal_spi_close_rx_interrupt(spi_handle_t *hspi){
@@ -179,14 +182,14 @@ void hal_spi_close_rx_interrupt(spi_handle_t *hspi){
 void hal_spi_handle_rx_interrupt(spi_handle_t *hspi){
 	//receive data in 8-bit mode
 	if (hspi->Init.Data_Size == SPI_8_BIT_DFF_ENABLE){
-			*(hspi->rxBuffer) = hspi->Instance->DR; 	//reading off of a DR
-			hspi->rx_count--;
+		*(hspi->rxBuffer) = hspi->Instance->DR; 	//reading off of a DR
+		hspi->rx_count--;
 	}
 	//receive data in 16-bit mode
-		else{
-			*((uint16_t*)hspi->rxBuffer) = hspi->Instance->DR;
-			hspi->rx_count-=2;
-		}
+	else{
+		*((uint16_t*)hspi->rxBuffer) = hspi->Instance->DR;
+		hspi->rx_count-=2;
+	}
 
 	/*Done with the RXing of data; closing the RXNE interrupt */
 	if (hspi->rx_count == RESET){
@@ -215,15 +218,13 @@ void hal_spi_handle_tx_interrupt(spi_handle_t *hspi){
 
 }
 //----------------------------------------
-void send_rcv(spi_handle_t *hspi){
-	if (hspi->txBuffer) hspi->Instance->DR = *hspi->txBuffer++;	//fill in DR -- TX != empty
+void begin_spi(spi_handle_t *hspi){
+	hspi->Instance->DR = *hspi->txBuffer++;		//fill in DR -- TX != empty
 
-	//uint32_t txe_delay = SPI_SR_TXE;		//data from DR ----> MOSI (TX == EMPTY)
-	//uint32_t rxne_delay = SPI_SR_RXNE;		//data from MISO ---> DR	  (RX !=empty)
-	while( (hspi->Instance->SR & SPI_SR_TXE) == 0 ){}
-	while(!(hspi->Instance->SR & SPI_SR_RXNE)){}
+	while(!(hspi->Instance->SR & SPI_SR_TXE)){}	//wait till data from DR ----> MOSI (TX == EMPTY)
+	while(!(hspi->Instance->SR & SPI_SR_RXNE)){}	//wait till data from MISO ----> DR (RXNE != EMPTY)
 
-	uint32_t val = hspi->Instance->DR;
+	uint32_t val = hspi->Instance->DR;	//read out from DR -- RX buffer = empty (RXNE = 0)
 
 }
 
@@ -235,8 +236,9 @@ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size){
 	//checking if TXE is set in SR -- Ready to write (TX buffer = empty)
 	temp = hspi->Instance->SR & (SPI_SR_TXE);
 
-	if ( temp!=0){	//when TX = EMPTY, fill in TX buffer
-		send_rcv(hspi);
+	while(size){
+		begin_spi(hspi);
+		size--;
 	}
 }
 
@@ -246,7 +248,7 @@ void hal_spi_irq_handler(spi_handle_t *hspi){
 
 	uint32_t temp1 = 0, temp2 = 0;
 
-	//checking if RXNE is set in SR -- Ready to read in data (RX buffer != empty)
+	//checking if RX buffer is not empty -- Ready to read in data (RX buffer != empty)
 	temp1 = (hspi->Instance->SR & SPI_SR_RXNE);
 	//checking if RXNEIE bit is enabled in CR
 	temp2 = (hspi->Instance->CR2 & SPI_CR2_RXNEIE);
@@ -254,17 +256,17 @@ void hal_spi_irq_handler(spi_handle_t *hspi){
 
 	if (temp1!= RESET && temp2!= RESET){		//ready to READ in a data
 		hal_spi_handle_rx_interrupt(hspi);	//handling RXNE interrupt
-		return;
+		//return;
 	}
 
-	//checking if TXE is set in SR -- Ready to write (TX buffer = empty)
+	//checking if TX -- Ready to write (TX buffer = empty)
 	temp1 = (hspi->Instance->SR & SPI_SR_TXE);
 	//checking if TXEIE bit is enabled in CR
 	temp2 = (hspi->Instance->CR2 & SPI_CR2_TXEIE);
 
-	if (temp1!= RESET && temp2!= RESET){	   //ready to WRITE
+	if (temp1!= RESET && temp2!= RESET){	   //TX = empty -- ready to WRITE
 		hal_spi_handle_tx_interrupt(hspi); //handling TXE interrupt
-		return;
+		//return;
 	}
 }
 
@@ -276,7 +278,17 @@ void hal_spi_irq_handler(spi_handle_t *hspi){
 /*                                                                            */
 /******************************************************************************/
 
-/* --- MASTER ---- */
+void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length){
+	spi_handle->txBuffer = tx_buffer;
+	spi_handle->TX_tranfer_size = length;
+	spi_handle->tx_count = length;
+
+	spi_handle->state = HAL_SPI_STATE_BUSY_TX;
+
+	hal_spi_enable_txe_interrupt(spi_handle->Instance);
+	hal_spi_enable_rxne_interrupt(spi_handle->Instance);
+	hal_spi_enable(spi_handle->Instance);
+}
 
 
 
