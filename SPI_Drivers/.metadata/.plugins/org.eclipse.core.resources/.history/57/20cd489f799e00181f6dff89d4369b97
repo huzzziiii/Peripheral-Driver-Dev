@@ -127,7 +127,6 @@ int main(void){
 		//tx_handler(&spiHandle, txBuffer, CMD_LENGTH); // start BLOCKING SPI communication
 
 		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
-
 		interrupts_SPI_transfer(&spiHandle, data, CMD_LENGTH);	//start NONBLOCKING SPI communication
 
 		/* WAIT TILL TRANSFER IS COMPLETE */

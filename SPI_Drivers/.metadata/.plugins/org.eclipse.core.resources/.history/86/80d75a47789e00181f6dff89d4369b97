@@ -118,16 +118,16 @@ int main(void){
 //	/*                        Master command sending code                         */
 //	/*                         Write and read commands                            */
 //	/******************************************************************************/
+//	hal_gpio_write_to_pin(GPIOD, 0, GPIO_PIN_10);
 
-	data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
-	data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
-
-	//while(1){
+	while(1){
+		data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
+		data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
 
 		//tx_handler(&spiHandle, txBuffer, CMD_LENGTH); // start BLOCKING SPI communication
 
-		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
 
+		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
 		interrupts_SPI_transfer(&spiHandle, data, CMD_LENGTH);	//start NONBLOCKING SPI communication
 
 		/* WAIT TILL TRANSFER IS COMPLETE */
@@ -136,7 +136,7 @@ int main(void){
 	//	hal_spi_master_rx(&spiHandle, ack_buf, ACK_LENGTH);
 
 
-	//}
+	}
 
 	return 0;
 }

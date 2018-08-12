@@ -9303,3 +9303,175 @@ arm-none-eabi-size "SPI_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
    2124	      8	   1624	   3756	    eac	SPI_Drivers.elf
  
+17:05:53 **** Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:83:10: warning: unused variable 'ack_buf' [-Wunused-variable]
+  uint8_t ack_buf[2];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2124	      8	   1624	   3756	    eac	SPI_Drivers.elf
+ 
+17:20:40 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:23:42 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:26:51 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:27:28 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:29:12 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:31:14 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:33:54 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: warning: implicit declaration of function 'hal_spi_config_data_size_direction' [-Wimplicit-function-declaration]
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: warning: implicit declaration of function 'hal_spi_config_nss_master' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: warning: implicit declaration of function 'hal_spi_config_nss_slave' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: warning: implicit declaration of function 'hal_spi_configure_baudrate' [-Wimplicit-function-declaration]
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: warning: implicit declaration of function 'hal_spi_configure_direction' [-Wimplicit-function-declaration]
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:43:6: warning: conflicting types for 'hal_spi_configure_baudrate'
+ void hal_spi_configure_baudrate(SPI_TypeDef *SPIx, uint32_t prescalar){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: note: previous implicit declaration of 'hal_spi_configure_baudrate' was here
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:55:6: warning: conflicting types for 'hal_spi_configure_direction'
+ void hal_spi_configure_direction(SPI_TypeDef *SPIx, uint32_t direction){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: note: previous implicit declaration of 'hal_spi_configure_direction' was here
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:93:6: warning: conflicting types for 'hal_spi_config_data_size_direction'
+ void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: note: previous implicit declaration of 'hal_spi_config_data_size_direction' was here
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:110:6: warning: conflicting types for 'hal_spi_config_nss_master'
+ void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: note: previous implicit declaration of 'hal_spi_config_nss_master' was here
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:121:6: warning: conflicting types for 'hal_spi_config_nss_slave'
+ void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: note: previous implicit declaration of 'hal_spi_config_nss_slave' was here
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'begin_spi':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:227:11: warning: unused variable 'val' [-Wunused-variable]
+  uint32_t val = hspi->Instance->DR; //read out from DR -- RX buffer = empty (RXNE = 0)
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'tx_handler':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:232:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32_t temp=0;
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_master_rx':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:312:10: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  int32_t val;
+          ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2124	      8	   1624	   3756	    eac	SPI_Drivers.elf
+ 
+17:37:57 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+17:40:10 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:83:10: warning: unused variable 'ack_buf' [-Wunused-variable]
+  uint8_t ack_buf[2];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2124	      8	   1624	   3756	    eac	SPI_Drivers.elf
+ 
+17:42:49 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:83:10: warning: unused variable 'ack_buf' [-Wunused-variable]
+  uint8_t ack_buf[2];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2132	      8	   1624	   3764	    eb4	SPI_Drivers.elf
+ 

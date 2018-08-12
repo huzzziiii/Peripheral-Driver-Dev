@@ -283,8 +283,6 @@ void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint3
 	spi_handle->TX_tranfer_size = length;
 	spi_handle->tx_count = length;
 
-	spi_handle->rx_count = length; 	//RXing same amount of bytes as TX bytes
-
 	spi_handle->state = HAL_SPI_STATE_BUSY_TX;
 
 	hal_spi_enable_txe_interrupt(spi_handle->Instance);
