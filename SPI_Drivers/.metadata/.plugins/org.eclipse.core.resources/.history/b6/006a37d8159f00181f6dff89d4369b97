@@ -1,0 +1,9 @@
+
+
+#define ADXL345_TO_READ 	6
+//#define CS
+int main(void){
+
+
+
+}

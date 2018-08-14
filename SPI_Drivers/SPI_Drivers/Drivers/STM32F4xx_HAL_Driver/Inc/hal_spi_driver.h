@@ -185,6 +185,6 @@ void send_rcv(spi_handle_t *hspi);
 /* SPI Functions */
 void hal_spi_config_device_mode(SPI_TypeDef *Instance, uint32_t Mode);
 void hal_spi_config_phase_polarity(SPI_TypeDef *Instance, uint32_t CLK_Phase, uint32_t CLK_Polarity);
-void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length);
+void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint8_t *rx_buffer, uint32_t length);
 
 #endif /* STM32F4XX_HAL_DRIVER_INC_HAL_SPI_DRIVER_H_ */

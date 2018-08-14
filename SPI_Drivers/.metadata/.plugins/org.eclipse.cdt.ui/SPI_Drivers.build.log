@@ -1,12 +1,52 @@
-17:42:49 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+00:28:24 **** Incremental Build of configuration Debug for project SPI_Drivers ****
 make all 
 Building file: ../Src/spi_master.c
 Invoking: MCU GCC Compiler
 /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'configure_ADX':
+../Src/spi_master.c:82:2: warning: implicit declaration of function 'adxPin_init' [-Wimplicit-function-declaration]
+  adxPin_init();   //initializing ADX pin
+  ^
+../Src/spi_master.c:83:2: warning: implicit declaration of function 'powerOn' [-Wimplicit-function-declaration]
+  powerOn();
+  ^
+../Src/spi_master.c:86:2: warning: implicit declaration of function 'setSPI' [-Wimplicit-function-declaration]
+  setSPI(0);
+  ^
+../Src/spi_master.c:87:2: warning: implicit declaration of function 'setActivityXYZ' [-Wimplicit-function-declaration]
+  setActivityXYZ(1,0,0, spiHandle);    // Set to activate movement detection in x, y, z axes
+  ^
+../Src/spi_master.c:88:2: warning: implicit declaration of function 'setActivityThreshold' [-Wimplicit-function-declaration]
+  setActivityThreshold(75, spiHandle);
+  ^
+../Src/spi_master.c:90:2: warning: implicit declaration of function 'setInactivityXYZ' [-Wimplicit-function-declaration]
+  setInactivityXYZ(1, 0, 0, spiHandle);     // Set to detect inactivity in X, Y, Z axes
+  ^
+../Src/spi_master.c:91:2: warning: implicit declaration of function 'setInactivityThreshold' [-Wimplicit-function-declaration]
+  setInactivityThreshold(75, spiHandle);    // 62.5mg per increment   // Set inactivity // Inactivity thresholds (0-255)
+  ^
+../Src/spi_master.c:92:2: warning: implicit declaration of function 'setTimeInactivity' [-Wimplicit-function-declaration]
+  setTimeInactivity(10, spiHandle);         // How many seconds of no activity is inactive?
+  ^
+../Src/spi_master.c:94:2: warning: implicit declaration of function 'setTapThreshold' [-Wimplicit-function-declaration]
+  setTapThreshold(50, spiHandle);
+  ^
+../Src/spi_master.c:95:2: warning: implicit declaration of function 'setTapDetectionOnXYZ' [-Wimplicit-function-declaration]
+  setTapDetectionOnXYZ(0, 0, 1, spiHandle); // Detect taps in the directions turned ON
+  ^
+../Src/spi_master.c:99:2: warning: implicit declaration of function 'setFreeFallThreshold' [-Wimplicit-function-declaration]
+  setFreeFallThreshold(7, spiHandle);       // (5 - 9) recommended - 62.5mg per increment
+  ^
+../Src/spi_master.c:100:2: warning: implicit declaration of function 'setFreeFallDuration' [-Wimplicit-function-declaration]
+  setFreeFallDuration(30, spiHandle);
+  ^
 ../Src/spi_master.c: In function 'main':
-../Src/spi_master.c:83:10: warning: unused variable 'ack_buf' [-Wunused-variable]
-  uint8_t ack_buf[2];
+../Src/spi_master.c:107:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[CMD_LENGTH];
+          ^
+../Src/spi_master.c:106:10: warning: variable 'data' set but not used [-Wunused-but-set-variable]
+  uint8_t data[CMD_LENGTH];
           ^
 Finished building: ../Src/spi_master.c
  
@@ -20,8 +60,8 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
 arm-none-eabi-size "SPI_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
-   2132	      8	   1624	   3764	    eb4	SPI_Drivers.elf
+   3792	      8	   1632	   5432	   1538	SPI_Drivers.elf
  
 
-17:42:53 Build Finished (took 3s.898ms)
+00:28:32 Build Finished (took 7s.621ms)
 

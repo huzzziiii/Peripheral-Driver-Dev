@@ -30,7 +30,7 @@ void hal_spi_init(spi_handle_t *spi_handle){
 	hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
 
 	/* ENABLING SPI */
-	//hal_spi_enable(spi_handle->Instance);
+	hal_spi_enable(spi_handle->Instance);
 }
 
 /******************************************************************************/
@@ -218,18 +218,18 @@ void hal_spi_handle_tx_interrupt(spi_handle_t *hspi){
 
 }
 //----------------------------------------
-void begin_spi(spi_handle_t *hspi){
+uint32_t begin_spi(spi_handle_t *hspi){
 	hspi->Instance->DR = *hspi->txBuffer++;		//fill in DR -- TX != empty
 
 	while(!(hspi->Instance->SR & SPI_SR_TXE)){}	//wait till data from DR ----> MOSI (TX == EMPTY)
 	while(!(hspi->Instance->SR & SPI_SR_RXNE)){}	//wait till data from MISO ----> DR (RXNE != EMPTY)
 
 	uint32_t val = hspi->Instance->DR;	//read out from DR -- RX buffer = empty (RXNE = 0)
-
+	return val;
 }
 
-void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size){
-	uint32_t temp=0;
+uint32_t SPItransfer(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size){
+	uint32_t temp=0, data;
 	hspi->txBuffer = txBuffer;
 	hspi->TX_tranfer_size = size;
 
@@ -237,9 +237,10 @@ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size){
 	temp = hspi->Instance->SR & (SPI_SR_TXE);
 
 	while(size){
-		begin_spi(hspi);
+		data = begin_spi(hspi);
 		size--;
 	}
+	return data;
 }
 
 
@@ -278,8 +279,9 @@ void hal_spi_irq_handler(spi_handle_t *hspi){
 /*                                                                            */
 /******************************************************************************/
 
-void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length){
+void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint8_t *rx_buffer, uint32_t length){
 	spi_handle->txBuffer = tx_buffer;
+	spi_handle->rxBuffer = rx_buffer;
 	spi_handle->TX_tranfer_size = length;
 	spi_handle->tx_count = length;
 

@@ -1,0 +1,76 @@
+#include "adx345.h"
+#include <stdbool.h>
+
+void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state){
+	uint8_t data;
+	readFrom(address, 1, &data);
+
+	if (state){
+		data |= (state << bit_pos);	//4-wire SPI
+	}
+	else{
+		data &= ~(state << bit_pos);	//3-wire SPI
+	}
+
+	writeTo(address, data);
+}
+void setSPI(bool state){
+	setRegisterBit(ADXL345_DATA_FORMAT, 6, 1);
+}
+
+void writeTo(uint8_t address, uint8_t data){
+	/* Enabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
+
+	/* Transmitting the register address */
+	tx_handler(&spiHandle, address, 1);
+
+	/* Transmitting data */
+	tx_handler(&spiHandle, data, 1);
+
+	/* Disabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 1, ADX_PIN);
+
+}
+void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[]){
+	address |= 0x80;		// Enable READ bit
+	//MB = 0 	-- read 1 byte
+
+	/* Enabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
+
+	/* Transmitting the register address */
+	uint32_t temp = tx_handler(&spiHandle, address, 1);
+
+	/* reading data */
+	buffer[0] = tx_handler(&spiHandle, 0x00, 1);
+
+	/* Disabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 1, ADX_PIN);
+}
+
+void readAccel(void){
+	readFrom(ADXL345_DEVID, BYTES_TO_READ, buffer);
+}
+
+void setActivityXYZ(bool stateX, bool stateY, bool stateZ){
+	setRegisterBit( ADXL345_ACT_INACT_CTL,  6,  stateX);
+	setRegisterBit( ADXL345_ACT_INACT_CTL,  5,  stateY);
+	setRegisterBit( ADXL345_ACT_INACT_CTL,  4,  stateZ);
+}
+
+void setActivityThreshold(uint8_t activityThreshold){
+	writeTo(ADXL345_THRESH_ACT, activityThreshold);
+}
+
+void setInactivityXYZ(bool stateX, bool stateY, bool stateZ){
+	setRegisterBit( ADXL345_ACT_INACT_CTL,  2,  stateX);
+	setRegisterBit( ADXL345_ACT_INACT_CTL,  1,  stateY);
+	setRegisterBit( ADXL345_ACT_INACT_CTL,  0,  stateZ);
+}
+
+void setInactivityThreshold(uint8_t inactivityThreshold){
+	writeTo(ADXL345_THRESH_INACT, inactivityThreshold);
+}
+
+

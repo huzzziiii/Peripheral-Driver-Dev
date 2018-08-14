@@ -1,0 +1,29 @@
+#include "hal_spi_driver.h"
+#include "stm32f4xx_gpio_driver.h"
+
+#define BYTES_TO_READ		 	0x1
+#define ADX_PIN					10
+#define ADX_PORT					GPIOC
+//#define CS
+#define ADXL345_DEVID			0x00
+#define ADXL345_THRESH_ACT		0x24
+#define ADXL345_THRESH_INACT		0x25		// Inactivity Threshold
+#define ADXL345_TIME_INACT		0x26		// Inactivity Time
+#define ADXL345_ACT_INACT_CTL	0x27
+#define ADXL345_TAP_AXES			0x2A		// Axis Control for Tap/Double Tap
+
+#define ADXL345_DATA_FORMAT		0x31
+#define ADXL345_DATAX0			0x32		// X-Axis Data 0
+#define ADXL345_DATAX1			0x33		// X-Axis Data 1
+#define ADXL345_DATAY0			0x34		// Y-Axis Data 0
+#define ADXL345_DATAY1			0x35		// Y-Axis Data 1
+#define ADXL345_DATAZ0			0x36		// Z-Axis Data 0
+#define ADXL345_DATAZ1			0x37		// Z-Axis Data 1
+
+
+uint8_t buffer[BYTES_TO_READ];
+
+void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[]);
+void readAccel(void);
+void writeTo(uint8_t address, uint8_t data);
+//void readAccel(int *x, int *y, int *z);

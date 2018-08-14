@@ -1,0 +1,53 @@
+#include "adx345.h"
+#include <stdbool.h>
+
+void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state){
+	uint8_t data;
+
+	if (state){
+		data |= (state << bit_pos);	//4-wire SPI
+	}
+	else{
+		data &= ~(state << bit_pos);	//3-wire SPI
+	}
+	writeToSPI(address, data);
+}
+void setSPI(bool state){
+	setRegisterBit(ADXL345_DATA_FORMAT, 6, 1);
+}
+
+void writeToSPI(uint8_t address, uint8_t data){
+	/* Enabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
+
+	/* Transmitting the register address */
+	tx_handler(&spiHandle, address, 1);
+
+	/* Transmitting data */
+	tx_handler(&spiHandle, data, 1);
+
+	/* Disabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 1, ADX_PIN);
+
+
+}
+void readFromSPI(uint8_t address, int bytes_to_read, uint8_t buff[]){
+	address |= 0x80;		// Enable READ bit
+	//MB = 0 	-- read 1 byte
+
+	/* Enabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
+
+	/* Transmitting the register address */
+	tx_handler(&spiHandle, address, 1);
+
+	/* storing data */
+	buffer[0] = tx_handler(&spiHandle, 0x00, 1);
+
+	/* Disabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 1, ADX_PIN);
+}
+
+void readAccel(void){
+	readFromSPI(ADXL345_DEVID, BYTES_TO_READ, buffer);
+}

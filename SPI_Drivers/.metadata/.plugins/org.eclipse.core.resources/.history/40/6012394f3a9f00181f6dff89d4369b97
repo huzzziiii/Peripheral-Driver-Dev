@@ -1,0 +1,152 @@
+/*
+ * spi_master.c
+ *
+ */
+#include "hal_spi_driver.h"
+#include "spi_main.h"
+#include "adx345.h"
+#include "led.h"
+#include <stdbool.h>
+
+/*Configuring for SPI2 */
+
+bool buttonPressed = false;
+spi_handle_t spiHandle;
+
+void spi_gpio_init(void){
+	GPIO_PIN_CONFIG spi_conf;
+
+	_HAL_RCC_SPI2_CLK_ENABLE();		//SPI2 CLK
+	_HAL_RCC_GPIOB_CLK_ENABLE();
+	_HAL_RCC_GPIOC_CLK_ENABLE();
+
+	/* configure GPIOB_PIN_10 for SPI CLK functionality */
+	spi_conf.pin = SPI_CLK_PIN;			   //PIN 10
+	spi_conf.mode = GPIO_PIN_ALT_FUN_MODE; //Alternate mode is used for communication protocols like SPI, I2C
+
+	spi_conf.op_type = GPIO_PUSH_PULL;
+	spi_conf.pull = GPIO_PULL_DOWN;
+	spi_conf.speed = GPIO_MEDIUM_SPEED;
+
+	//configuring SPI setting
+	hal_gpio_alt_function(GPIOB, SPI_CLK_PIN, GPIO_PIN_AF5_SPI2);
+
+	//configuring GPIO settings
+	hal_gpio_init(GPIOB,&spi_conf);
+
+	/* configure GPIOC_PIN_2 for SPI MISO functionality */
+	spi_conf.pin = SPI_MISO_PIN;
+	spi_conf.pull = GPIO_PULL_UP;
+	hal_gpio_alt_function(GPIOC, SPI_MISO_PIN, GPIO_PIN_AF5_SPI2);
+	hal_gpio_init(GPIOC,&spi_conf);
+
+	/* configure GPIOC_PIN_3 for SPI MOSI functionality */
+	spi_conf.pin = SPI_MOSI_PIN;
+	spi_conf.pull = GPIO_PULL_UP;
+	hal_gpio_alt_function(GPIOC, SPI_MOSI_PIN, GPIO_PIN_AF5_SPI2);
+	hal_gpio_init(GPIOC,&spi_conf);
+}
+
+void slave_config(void){
+	GPIO_PIN_CONFIG led_pin_config;
+	_HAL_RCC_GPIOD_CLK_ENABLE();
+
+	led_pin_config.pin = GPIO_PIN_10;
+	led_pin_config.mode = GPIO_PIN_OUTPUT_MODE;
+	led_pin_config.op_type = GPIO_PUSH_PULL;
+	led_pin_config.speed = GPIO_MEDIUM_SPEED;
+	led_pin_config.pull = GPIO_NO_PUPD;
+
+	//configuring LED
+	hal_gpio_init(GPIOD, &led_pin_config);
+}
+
+/* Handler for the PUSH BUTTON (EXTI = 13) */
+void EXTI15_10_IRQHandler(void){
+	//clearing out the pending bit for this interrupt
+	hal_gpio_clear_interrupt(GPIO_PIN_13);
+
+	buttonPressed = true;
+	led_toggle(GPIOA,GPIO_PIN_5);
+}
+
+/* Handler for SPI2 interrupt */
+
+void SPI2_IRQHandler(void){
+
+	hal_spi_irq_handler(&spiHandle);
+}
+
+
+int main(void){
+
+	/* SPI handle variable for configuring the SPI device */
+	uint8_t data[CMD_LENGTH];
+	uint8_t rcv_buffer[CMD_LENGTH];
+
+//	/* Configuring SPI GPIO */
+	spi_gpio_init();
+
+	/* Configuring LED GPIO */
+	led_init();
+
+	/* Configuring Push Button interrupt -- PC13*/
+	button_init();
+	hal_gpio_configure_interrupt(GPIO_PIN_13, INT_FALLING_EDGE); // @suppress("Symbol is not resolved")
+	hal_gpio_enable_interrupt(GPIO_PIN_13, EXTI15_10_IRQn);
+
+
+	/* Populating SPI HANDLER */
+	spiHandle.Instance = SPI2;
+	spiHandle.Init.Baud_Rate = SPI_CR1_BR_PCLK_DIV_32;	//16MHz/32 = 500KHz
+	spiHandle.Init.Direction = SPI_ENABLE_2_LINE_UNI_DIR;
+	spiHandle.Init.CLK_Phase = SPI_TRAILING_CLK;
+	spiHandle.Init.CLK_Polarity = SPI_CPOL_LOW;
+	spiHandle.Init.Data_Size = SPI_8_BIT_DFF_ENABLE;
+	spiHandle.Init.First_Bit = SPI_TX_MSB_FIRST;
+	spiHandle.Init.NSS = SPI_CR1_SSM_ENABLE;
+	spiHandle.Init.Mode = SPI_MASTER_MODE_SEL;
+
+	spiHandle.state = HAL_SPI_STATE_READY;
+
+//	/* Initializing SPI device */
+	hal_spi_init(&spiHandle);
+
+
+//	/* Enable IRQ for SPI in the NVIC */
+	//NVIC_EnableIRQ(SPI2_IRQn);
+//
+//	/******************************************************************************/
+//	/*                        Master command sending code                         */
+//	/*                         Write and read commands                            */
+//	/******************************************************************************/
+
+	data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
+	data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
+
+	setSPI(1);
+	readAccel();
+
+	//while(1){
+
+
+		//tx_handler(&spiHandle, data, CMD_LENGTH); // start BLOCKING SPI communication
+
+		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
+
+	//	interrupts_SPI_transfer(&spiHandle, data, rcv_buffer, CMD_LENGTH);	//start NON-BLOCKING SPI communication
+
+		/* WAIT TILL TRANSFER IS COMPLETE */
+		while(spiHandle.state != HAL_SPI_STATE_READY);
+
+	//	hal_spi_master_rx(&spiHandle, ack_buf, ACK_LENGTH);
+
+
+	//}
+
+	return 0;
+}
+
+
+
+

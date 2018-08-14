@@ -1,0 +1,20 @@
+#include "adx345.h"
+
+
+void readFrom(uint8_t address, int bytes_to_read, uint8_t buff[]){
+	address |= 0x80;		// Enable READ bit
+	//MB = 0 	-- read 1 byte
+
+	/* Enabling CS */
+	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
+
+	/* Transmitting the register address */
+	tx_handler(&spiHandle, address, 1);
+
+	/* storing data */
+	buffer[0] = tx_handler(&spiHandle, 0x00, 1);
+}
+
+void readAccel(void){
+	readFrom(ADXL345_DATAX0, BYTES_TO_READ, buffer);
+}

@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/adx345.c \
 ../Src/spi_master.c \
 ../Src/system_stm32f4xx.c 
 
 OBJS += \
+./Src/adx345.o \
 ./Src/spi_master.o \
 ./Src/system_stm32f4xx.o 
 
 C_DEPS += \
+./Src/adx345.d \
 ./Src/spi_master.d \
 ./Src/system_stm32f4xx.d 
 

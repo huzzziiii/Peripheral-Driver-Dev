@@ -9475,3 +9475,1184 @@ arm-none-eabi-size "SPI_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
    2132	      8	   1624	   3764	    eb4	SPI_Drivers.elf
  
+18:22:05 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:83:10: warning: unused variable 'ack_buf' [-Wunused-variable]
+  uint8_t ack_buf[2];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2132	      8	   1624	   3764	    eb4	SPI_Drivers.elf
+ 
+18:22:17 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:28:52 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:29:33 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:31:43 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+18:34:46 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+19:11:31 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+20:47:20 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:84:10: warning: unused variable 'ack_buf' [-Wunused-variable]
+  uint8_t ack_buf[2];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2144	      8	   1624	   3776	    ec0	SPI_Drivers.elf
+ 
+20:49:07 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+21:27:19 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:132:45: error: 'rcv_buff' undeclared (first use in this function)
+   interrupts_SPI_transfer(&spiHandle, data, rcv_buff, CMD_LENGTH); //start NON-BLOCKING SPI communication
+                                             ^
+../Src/spi_master.c:132:45: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_master.c:132:3: error: too many arguments to function 'interrupts_SPI_transfer'
+   interrupts_SPI_transfer(&spiHandle, data, rcv_buff, CMD_LENGTH); //start NON-BLOCKING SPI communication
+   ^
+In file included from ../Src/spi_master.c:5:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:188:6: note: declared here
+ void interrupts_SPI_transfer(spi_handle_t *spi_handle, uint8_t *tx_buffer, uint32_t length);
+      ^
+../Src/spi_master.c:84:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[2];
+          ^
+make: *** [Src/spi_master.o] Error 1
+21:29:04 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:132:45: error: 'rcv_buff' undeclared (first use in this function)
+   interrupts_SPI_transfer(&spiHandle, data, rcv_buff, CMD_LENGTH); //start NON-BLOCKING SPI communication
+                                             ^
+../Src/spi_master.c:132:45: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_master.c:84:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[2];
+          ^
+make: *** [Src/spi_master.o] Error 1
+21:30:35 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:132:45: error: 'rcv_buff' undeclared (first use in this function)
+   interrupts_SPI_transfer(&spiHandle, data, rcv_buff, CMD_LENGTH); //start NON-BLOCKING SPI communication
+                                             ^
+../Src/spi_master.c:132:45: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_master.c:84:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[2] = {0};
+          ^
+make: *** [Src/spi_master.o] Error 1
+21:37:21 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+Finished building: ../Src/spi_master.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: warning: implicit declaration of function 'hal_spi_config_data_size_direction' [-Wimplicit-function-declaration]
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: warning: implicit declaration of function 'hal_spi_config_nss_master' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: warning: implicit declaration of function 'hal_spi_config_nss_slave' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: warning: implicit declaration of function 'hal_spi_configure_baudrate' [-Wimplicit-function-declaration]
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: warning: implicit declaration of function 'hal_spi_configure_direction' [-Wimplicit-function-declaration]
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:43:6: warning: conflicting types for 'hal_spi_configure_baudrate'
+ void hal_spi_configure_baudrate(SPI_TypeDef *SPIx, uint32_t prescalar){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: note: previous implicit declaration of 'hal_spi_configure_baudrate' was here
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:55:6: warning: conflicting types for 'hal_spi_configure_direction'
+ void hal_spi_configure_direction(SPI_TypeDef *SPIx, uint32_t direction){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: note: previous implicit declaration of 'hal_spi_configure_direction' was here
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:93:6: warning: conflicting types for 'hal_spi_config_data_size_direction'
+ void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: note: previous implicit declaration of 'hal_spi_config_data_size_direction' was here
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:110:6: warning: conflicting types for 'hal_spi_config_nss_master'
+ void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: note: previous implicit declaration of 'hal_spi_config_nss_master' was here
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:121:6: warning: conflicting types for 'hal_spi_config_nss_slave'
+ void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: note: previous implicit declaration of 'hal_spi_config_nss_slave' was here
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'begin_spi':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:227:11: warning: unused variable 'val' [-Wunused-variable]
+  uint32_t val = hspi->Instance->DR; //read out from DR -- RX buffer = empty (RXNE = 0)
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'tx_handler':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:232:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32_t temp=0;
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_master_rx':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:313:10: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  int32_t val;
+          ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2148	      8	   1624	   3780	    ec4	SPI_Drivers.elf
+ 
+21:37:31 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+21:38:21 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+11:42:16 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:84:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[CMD_LENGTH];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: warning: implicit declaration of function 'hal_spi_config_data_size_direction' [-Wimplicit-function-declaration]
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: warning: implicit declaration of function 'hal_spi_config_nss_master' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: warning: implicit declaration of function 'hal_spi_config_nss_slave' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: warning: implicit declaration of function 'hal_spi_configure_baudrate' [-Wimplicit-function-declaration]
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: warning: implicit declaration of function 'hal_spi_configure_direction' [-Wimplicit-function-declaration]
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:33:2: warning: implicit declaration of function 'hal_spi_enable' [-Wimplicit-function-declaration]
+  hal_spi_enable(spi_handle->Instance);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:43:6: warning: conflicting types for 'hal_spi_configure_baudrate'
+ void hal_spi_configure_baudrate(SPI_TypeDef *SPIx, uint32_t prescalar){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: note: previous implicit declaration of 'hal_spi_configure_baudrate' was here
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:55:6: warning: conflicting types for 'hal_spi_configure_direction'
+ void hal_spi_configure_direction(SPI_TypeDef *SPIx, uint32_t direction){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: note: previous implicit declaration of 'hal_spi_configure_direction' was here
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:93:6: warning: conflicting types for 'hal_spi_config_data_size_direction'
+ void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: note: previous implicit declaration of 'hal_spi_config_data_size_direction' was here
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:110:6: warning: conflicting types for 'hal_spi_config_nss_master'
+ void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: note: previous implicit declaration of 'hal_spi_config_nss_master' was here
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:121:6: warning: conflicting types for 'hal_spi_config_nss_slave'
+ void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: note: previous implicit declaration of 'hal_spi_config_nss_slave' was here
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:131:6: warning: conflicting types for 'hal_spi_enable'
+ void hal_spi_enable(SPI_TypeDef *SPIx){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:33:2: note: previous implicit declaration of 'hal_spi_enable' was here
+  hal_spi_enable(spi_handle->Instance);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'begin_spi':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:227:11: warning: unused variable 'val' [-Wunused-variable]
+  uint32_t val = hspi->Instance->DR; //read out from DR -- RX buffer = empty (RXNE = 0)
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'tx_handler':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:232:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32_t temp=0;
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_master_rx':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:313:10: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  int32_t val;
+          ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2140	      8	   1624	   3772	    ebc	SPI_Drivers.elf
+ 
+11:46:22 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+11:48:35 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+11:49:45 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+11:49:57 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+make: Nothing to be done for `all'.
+13:52:15 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'setRegisterBit':
+../Src/adx345.c:6:23: warning: passing argument 3 of 'readFrom' makes pointer from integer without a cast [-Wint-conversion]
+  readFrom(address, 1, data);
+                       ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:20:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void readFrom(uint8_t address, int bytes_to_read, uint8_t buff[]);
+      ^
+../Src/adx345.c:13:2: warning: implicit declaration of function 'writeTo' [-Wimplicit-function-declaration]
+  writeTo(address, data);
+  ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:19:6: warning: conflicting types for 'writeTo'
+ void writeTo(uint8_t address, uint8_t data){
+      ^
+../Src/adx345.c:13:2: note: previous implicit declaration of 'writeTo' was here
+  writeTo(address, data);
+  ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:24:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
+../Src/adx345.c:24:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c:27:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, data, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:34:6: error: conflicting types for 'readFrom'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[]){
+      ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:20:6: note: previous declaration of 'readFrom' was here
+ void readFrom(uint8_t address, int bytes_to_read, uint8_t buff[]);
+      ^
+../Src/adx345.c: In function 'readFrom':
+../Src/adx345.c:42:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:42:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:51:6: error: conflicting types for 'readAccel'
+ void readAccel(void){
+      ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:21:6: note: previous declaration of 'readAccel' was here
+ void readAccel(int *x, int *y, int *z);
+      ^
+make: *** [Src/adx345.o] Error 1
+13:58:53 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'setRegisterBit':
+../Src/adx345.c:6:23: warning: passing argument 3 of 'readFrom' makes pointer from integer without a cast [-Wint-conversion]
+  readFrom(address, 1, data);
+                       ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:20:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[]);
+      ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:24:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
+../Src/adx345.c:24:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c:27:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, data, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c: In function 'readFrom':
+../Src/adx345.c:42:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:42:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+make: *** [Src/adx345.o] Error 1
+14:02:27 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:24:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
+../Src/adx345.c:24:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c:27:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, data, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c: In function 'readFrom':
+../Src/adx345.c:42:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:42:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+make: *** [Src/adx345.o] Error 1
+16:04:02 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:26:14: error: 'spiHandle' undeclared (first use in this function)
+  tx_handler(&spiHandle, address, 1);
+              ^
+../Src/adx345.c:26:14: note: each undeclared identifier is reported only once for each function it appears in
+../Src/adx345.c:26:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, address, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c:29:25: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  tx_handler(&spiHandle, data, 1);
+                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c: In function 'readFrom':
+../Src/adx345.c:43:30: error: 'spiHandle' undeclared (first use in this function)
+  uint32_t temp = tx_handler(&spiHandle, address, 1);
+                              ^
+../Src/adx345.c:43:41: warning: passing argument 2 of 'tx_handler' makes pointer from integer without a cast [-Wint-conversion]
+  uint32_t temp = tx_handler(&spiHandle, address, 1);
+                                         ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:1:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/hal_spi_driver.h:181:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void tx_handler(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size);
+      ^
+../Src/adx345.c:43:11: warning: unused variable 'temp' [-Wunused-variable]
+  uint32_t temp = tx_handler(&spiHandle, address, 1);
+           ^
+make: *** [Src/adx345.o] Error 1
+23:59:50 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c:48:71: error: unknown type name 'spiHandle'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spiHandle){
+                                                                       ^
+../Src/adx345.c:66:6: error: conflicting types for 'writeTo'
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: previous declaration of 'writeTo' was here
+ void writeTo(uint8_t address, uint8_t data);
+      ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:71:2: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  SPItransfer(&spiHandle, address, 1);
+  ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:83:6: error: conflicting types for 'readAccel'
+ void readAccel(spi_handle_t spiHandle){
+      ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:32:6: note: previous declaration of 'readAccel' was here
+ void readAccel(void);
+      ^
+../Src/adx345.c: In function 'readAccel':
+../Src/adx345.c:84:2: error: too many arguments to function 'readFrom'
+  readFrom(ADXL345_DEVID, BYTES_TO_READ, buffer, spiHandle);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:31:6: note: declared here
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[]);
+      ^
+../Src/adx345.c: In function 'setActivityThreshold':
+../Src/adx345.c:89:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_ACT, activityThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setInactivityThreshold':
+../Src/adx345.c:106:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_INACT, inactivityThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setTimeInactivity':
+../Src/adx345.c:111:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_TIME_INACT, timeInactivity);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setTapThreshold':
+../Src/adx345.c:125:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_TAP, tapThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setFreeFallThreshold':
+../Src/adx345.c:130:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_FF, freeFallThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setFreeFallDuration':
+../Src/adx345.c:135:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_TIME_FF, freeFallDuration);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+make: *** [Src/adx345.o] Error 1
+00:10:45 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'powerOn':
+../Src/adx345.c:23:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 0); // Wakeup
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:24:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 16); // Auto_Sleep
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:25:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 8); // Measure
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c: In function 'setRegisterBit':
+../Src/adx345.c:30:2: error: too few arguments to function 'readFrom'
+  readFrom(address, 1, &data);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:31:6: note: declared here
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:39:2: error: too few arguments to function 'writeTo'
+  writeTo(address, data);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:48:71: error: unknown type name 'spiHandle'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spiHandle){
+                                                                       ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:71:2: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  SPItransfer(&spiHandle, address, 1);
+  ^
+../Src/adx345.c: In function 'setInactivityThreshold':
+../Src/adx345.c:106:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_INACT, inactivityThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setTimeInactivity':
+../Src/adx345.c:111:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_TIME_INACT, timeInactivity);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setTapThreshold':
+../Src/adx345.c:125:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_TAP, tapThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setFreeFallThreshold':
+../Src/adx345.c:130:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_FF, freeFallThreshold);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setFreeFallDuration':
+../Src/adx345.c:135:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_TIME_FF, freeFallDuration);
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+make: *** [Src/adx345.o] Error 1
+00:18:19 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'powerOn':
+../Src/adx345.c:23:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 0); // Wakeup
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:24:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 16); // Auto_Sleep
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:25:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 8); // Measure
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c: In function 'setRegisterBit':
+../Src/adx345.c:30:2: error: too few arguments to function 'readFrom'
+  readFrom(address, 1, &data);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:31:6: note: declared here
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:39:2: error: too few arguments to function 'writeTo'
+  writeTo(address, data);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:48:71: error: unknown type name 'spiHandle'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spiHandle){
+                                                                       ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:71:2: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  SPItransfer(&spiHandle, address, 1);
+  ^
+../Src/adx345.c: In function 'setInactivityThreshold':
+../Src/adx345.c:106:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_THRESH_INACT, inactivityThreshold), spiHandle;
+  ^
+../Src/adx345.c:66:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:106:52: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  writeTo(ADXL345_THRESH_INACT, inactivityThreshold), spiHandle;
+                                                    ^
+../Src/adx345.c:106:2: warning: statement with no effect [-Wunused-value]
+  writeTo(ADXL345_THRESH_INACT, inactivityThreshold), spiHandle;
+  ^
+make: *** [Src/adx345.o] Error 1
+00:19:28 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'powerOn':
+../Src/adx345.c:23:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 0); // Wakeup
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:24:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 16); // Auto_Sleep
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:25:2: error: too few arguments to function 'writeTo'
+  writeTo(ADXL345_POWER_CTL, 8); // Measure
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c: In function 'setRegisterBit':
+../Src/adx345.c:30:2: error: too few arguments to function 'readFrom'
+  readFrom(address, 1, &data);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:31:6: note: declared here
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle_t spiHandle);
+      ^
+../Src/adx345.c:39:2: error: too few arguments to function 'writeTo'
+  writeTo(address, data);
+  ^
+In file included from ../Src/adx345.c:1:0:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:33:6: note: declared here
+ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);
+      ^
+../Src/adx345.c: At top level:
+../Src/adx345.c:48:71: error: unknown type name 'spiHandle'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spiHandle){
+                                                                       ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:71:2: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  SPItransfer(&spiHandle, address, 1);
+  ^
+make: *** [Src/adx345.o] Error 1
+00:21:10 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+make: *** [Src/adx345.o] Terminated: 15
+Command canceled
+00:22:12 **** Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c:48:71: error: unknown type name 'spiHandle'
+ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spiHandle){
+                                                                       ^
+../Src/adx345.c: In function 'writeTo':
+../Src/adx345.c:71:2: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  SPItransfer(&spiHandle, address, 1);
+  ^
+../Src/adx345.c: In function 'setActivityXYZ':
+../Src/adx345.c:94:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  6,  stateX);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:95:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  5,  stateY);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:96:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  4,  stateZ);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setInactivityXYZ':
+../Src/adx345.c:100:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  2,  stateX);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:101:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  1,  stateY);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:102:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  0,  stateZ);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setTapDetectionOnXYZ':
+../Src/adx345.c:118:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit(ADXL345_TAP_AXES, 2, stateX);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:119:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit(ADXL345_TAP_AXES, 1, stateY);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:120:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit(ADXL345_TAP_AXES, 0, stateZ);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+make: *** [Src/adx345.o] Error 1
+00:23:17 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'readFrom':
+../Src/adx345.c:56:18: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  uint32_t temp = SPItransfer(&spiHandle, address, 1);
+                  ^
+../Src/adx345.c:62:2: error: too many arguments to function 'hal_gpio_write_to_pin'
+  hal_gpio_write_to_pin(ADX_PORT, 1, ADX_PIN, spiHandle);
+  ^
+In file included from /engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc/adx345.h:2:0,
+                 from ../Src/adx345.c:1:
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_gpio_driver.h:91:6: note: declared here
+ void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint8_t val, uint16_t pin);
+      ^
+../Src/adx345.c:56:11: warning: unused variable 'temp' [-Wunused-variable]
+  uint32_t temp = SPItransfer(&spiHandle, address, 1);
+           ^
+../Src/adx345.c: In function 'setActivityXYZ':
+../Src/adx345.c:94:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  6,  stateX);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:95:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  5,  stateY);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:96:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  4,  stateZ);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setInactivityXYZ':
+../Src/adx345.c:100:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  2,  stateX);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:101:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  1,  stateY);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:102:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit( ADXL345_ACT_INACT_CTL,  0,  stateZ);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c: In function 'setTapDetectionOnXYZ':
+../Src/adx345.c:118:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit(ADXL345_TAP_AXES, 2, stateX);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:119:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit(ADXL345_TAP_AXES, 1, stateY);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+../Src/adx345.c:120:2: error: too few arguments to function 'setRegisterBit'
+  setRegisterBit(ADXL345_TAP_AXES, 0, stateZ);
+  ^
+../Src/adx345.c:28:6: note: declared here
+ void setRegisterBit(uint8_t address, uint8_t bit_pos, bool state, spi_handle_t spiHandle){
+      ^
+make: *** [Src/adx345.o] Error 1
+00:25:50 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+../Src/adx345.c: In function 'readFrom':
+../Src/adx345.c:56:18: warning: implicit declaration of function 'SPItransfer' [-Wimplicit-function-declaration]
+  uint32_t temp = SPItransfer(&spiHandle, address, 1);
+                  ^
+../Src/adx345.c:56:11: warning: unused variable 'temp' [-Wunused-variable]
+  uint32_t temp = SPItransfer(&spiHandle, address, 1);
+           ^
+Finished building: ../Src/adx345.c
+ 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'configure_ADX':
+../Src/spi_master.c:82:2: warning: implicit declaration of function 'adxPin_init' [-Wimplicit-function-declaration]
+  adxPin_init();   //initializing ADX pin
+  ^
+../Src/spi_master.c:83:2: warning: implicit declaration of function 'powerOn' [-Wimplicit-function-declaration]
+  powerOn();
+  ^
+../Src/spi_master.c:86:2: warning: implicit declaration of function 'setSPI' [-Wimplicit-function-declaration]
+  setSPI(0);
+  ^
+../Src/spi_master.c:87:2: warning: implicit declaration of function 'setActivityXYZ' [-Wimplicit-function-declaration]
+  setActivityXYZ(1,0,0, spiHandle);    // Set to activate movement detection in x, y, z axes
+  ^
+../Src/spi_master.c:88:2: warning: implicit declaration of function 'setActivityThreshold' [-Wimplicit-function-declaration]
+  setActivityThreshold(75, spiHandle);
+  ^
+../Src/spi_master.c:90:2: warning: implicit declaration of function 'setInactivityXYZ' [-Wimplicit-function-declaration]
+  setInactivityXYZ(1, 0, 0, spiHandle);     // Set to detect inactivity in X, Y, Z axes
+  ^
+../Src/spi_master.c:91:2: warning: implicit declaration of function 'setInactivityThreshold' [-Wimplicit-function-declaration]
+  setInactivityThreshold(75, spiHandle);    // 62.5mg per increment   // Set inactivity // Inactivity thresholds (0-255)
+  ^
+../Src/spi_master.c:92:2: warning: implicit declaration of function 'setTimeInactivity' [-Wimplicit-function-declaration]
+  setTimeInactivity(10, spiHandle);         // How many seconds of no activity is inactive?
+  ^
+../Src/spi_master.c:94:2: warning: implicit declaration of function 'setTapThreshold' [-Wimplicit-function-declaration]
+  setTapThreshold(50, spiHandle);
+  ^
+../Src/spi_master.c:95:2: warning: implicit declaration of function 'setTapDetectionOnXYZ' [-Wimplicit-function-declaration]
+  setTapDetectionOnXYZ(0, 0, 1, spiHandle); // Detect taps in the directions turned ON
+  ^
+../Src/spi_master.c:99:2: warning: implicit declaration of function 'setFreeFallThreshold' [-Wimplicit-function-declaration]
+  setFreeFallThreshold(7, spiHandle);       // (5 - 9) recommended - 62.5mg per increment
+  ^
+../Src/spi_master.c:100:2: warning: implicit declaration of function 'setFreeFallDuration' [-Wimplicit-function-declaration]
+  setFreeFallDuration(30, spiHandle);
+  ^
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:138:2: warning: implicit declaration of function 'configureADX' [-Wimplicit-function-declaration]
+  configureADX(spiHandle);
+  ^
+../Src/spi_master.c:107:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[CMD_LENGTH];
+          ^
+../Src/spi_master.c:106:10: warning: variable 'data' set but not used [-Wunused-but-set-variable]
+  uint8_t data[CMD_LENGTH];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c"
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_init':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: warning: implicit declaration of function 'hal_spi_config_data_size_direction' [-Wimplicit-function-declaration]
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: warning: implicit declaration of function 'hal_spi_config_nss_master' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: warning: implicit declaration of function 'hal_spi_config_nss_slave' [-Wimplicit-function-declaration]
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: warning: implicit declaration of function 'hal_spi_configure_baudrate' [-Wimplicit-function-declaration]
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: warning: implicit declaration of function 'hal_spi_configure_direction' [-Wimplicit-function-declaration]
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:33:2: warning: implicit declaration of function 'hal_spi_enable' [-Wimplicit-function-declaration]
+  hal_spi_enable(spi_handle->Instance);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: At top level:
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:43:6: warning: conflicting types for 'hal_spi_configure_baudrate'
+ void hal_spi_configure_baudrate(SPI_TypeDef *SPIx, uint32_t prescalar){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:27:2: note: previous implicit declaration of 'hal_spi_configure_baudrate' was here
+  hal_spi_configure_baudrate(spi_handle->Instance, spi_handle->Init.Baud_Rate);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:55:6: warning: conflicting types for 'hal_spi_configure_direction'
+ void hal_spi_configure_direction(SPI_TypeDef *SPIx, uint32_t direction){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:30:2: note: previous implicit declaration of 'hal_spi_configure_direction' was here
+  hal_spi_configure_direction(spi_handle->Instance, spi_handle->Init.Direction);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:93:6: warning: conflicting types for 'hal_spi_config_data_size_direction'
+ void hal_spi_config_data_size_direction(SPI_TypeDef *SPIx, uint32_t datasize_16, uint32_t lsb_first){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:17:2: note: previous implicit declaration of 'hal_spi_config_data_size_direction' was here
+  hal_spi_config_data_size_direction(spi_handle->Instance, spi_handle->Init.Data_Size, spi_handle->Init.First_Bit);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:110:6: warning: conflicting types for 'hal_spi_config_nss_master'
+ void hal_spi_config_nss_master(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:21:3: note: previous implicit declaration of 'hal_spi_config_nss_master' was here
+   hal_spi_config_nss_master(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:121:6: warning: conflicting types for 'hal_spi_config_nss_slave'
+ void hal_spi_config_nss_slave(SPI_TypeDef *SPIx, uint32_t ssm_enable){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:23:3: note: previous implicit declaration of 'hal_spi_config_nss_slave' was here
+   hal_spi_config_nss_slave(spi_handle->Instance, spi_handle->Init.NSS);
+   ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:131:6: warning: conflicting types for 'hal_spi_enable'
+ void hal_spi_enable(SPI_TypeDef *SPIx){
+      ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:33:2: note: previous implicit declaration of 'hal_spi_enable' was here
+  hal_spi_enable(spi_handle->Instance);
+  ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'SPItransfer':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:232:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32_t temp=0, data;
+           ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'hal_spi_master_rx':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:314:10: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  int32_t val;
+          ^
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c: In function 'SPItransfer':
+../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c:243:9: warning: 'data' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return data;
+         ^
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/hal_spi_driver.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Src/spi_master.o: In function `main':
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug/../Src/spi_master.c:138: undefined reference to `configureADX'
+collect2: error: ld returned 1 exit status
+make: *** [SPI_Drivers.elf] Error 1
+00:28:24 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'configure_ADX':
+../Src/spi_master.c:82:2: warning: implicit declaration of function 'adxPin_init' [-Wimplicit-function-declaration]
+  adxPin_init();   //initializing ADX pin
+  ^
+../Src/spi_master.c:83:2: warning: implicit declaration of function 'powerOn' [-Wimplicit-function-declaration]
+  powerOn();
+  ^
+../Src/spi_master.c:86:2: warning: implicit declaration of function 'setSPI' [-Wimplicit-function-declaration]
+  setSPI(0);
+  ^
+../Src/spi_master.c:87:2: warning: implicit declaration of function 'setActivityXYZ' [-Wimplicit-function-declaration]
+  setActivityXYZ(1,0,0, spiHandle);    // Set to activate movement detection in x, y, z axes
+  ^
+../Src/spi_master.c:88:2: warning: implicit declaration of function 'setActivityThreshold' [-Wimplicit-function-declaration]
+  setActivityThreshold(75, spiHandle);
+  ^
+../Src/spi_master.c:90:2: warning: implicit declaration of function 'setInactivityXYZ' [-Wimplicit-function-declaration]
+  setInactivityXYZ(1, 0, 0, spiHandle);     // Set to detect inactivity in X, Y, Z axes
+  ^
+../Src/spi_master.c:91:2: warning: implicit declaration of function 'setInactivityThreshold' [-Wimplicit-function-declaration]
+  setInactivityThreshold(75, spiHandle);    // 62.5mg per increment   // Set inactivity // Inactivity thresholds (0-255)
+  ^
+../Src/spi_master.c:92:2: warning: implicit declaration of function 'setTimeInactivity' [-Wimplicit-function-declaration]
+  setTimeInactivity(10, spiHandle);         // How many seconds of no activity is inactive?
+  ^
+../Src/spi_master.c:94:2: warning: implicit declaration of function 'setTapThreshold' [-Wimplicit-function-declaration]
+  setTapThreshold(50, spiHandle);
+  ^
+../Src/spi_master.c:95:2: warning: implicit declaration of function 'setTapDetectionOnXYZ' [-Wimplicit-function-declaration]
+  setTapDetectionOnXYZ(0, 0, 1, spiHandle); // Detect taps in the directions turned ON
+  ^
+../Src/spi_master.c:99:2: warning: implicit declaration of function 'setFreeFallThreshold' [-Wimplicit-function-declaration]
+  setFreeFallThreshold(7, spiHandle);       // (5 - 9) recommended - 62.5mg per increment
+  ^
+../Src/spi_master.c:100:2: warning: implicit declaration of function 'setFreeFallDuration' [-Wimplicit-function-declaration]
+  setFreeFallDuration(30, spiHandle);
+  ^
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:107:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[CMD_LENGTH];
+          ^
+../Src/spi_master.c:106:10: warning: variable 'data' set but not used [-Wunused-but-set-variable]
+  uint8_t data[CMD_LENGTH];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3792	      8	   1632	   5432	   1538	SPI_Drivers.elf
+ 

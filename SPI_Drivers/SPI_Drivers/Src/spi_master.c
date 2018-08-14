@@ -4,6 +4,7 @@
  */
 #include "hal_spi_driver.h"
 #include "spi_main.h"
+#include "adx345.h"
 #include "led.h"
 #include <stdbool.h>
 
@@ -17,9 +18,10 @@ void spi_gpio_init(void){
 
 	_HAL_RCC_SPI2_CLK_ENABLE();		//SPI2 CLK
 	_HAL_RCC_GPIOB_CLK_ENABLE();
+	_HAL_RCC_GPIOC_CLK_ENABLE();
 
-	/* configure GPIOB_PIN_13 for SPI CLK functionality */
-	spi_conf.pin = SPI_CLK_PIN;			   //PIN 13
+	/* configure GPIOB_PIN_10 for SPI CLK functionality */
+	spi_conf.pin = SPI_CLK_PIN;			   //PIN 10
 	spi_conf.mode = GPIO_PIN_ALT_FUN_MODE; //Alternate mode is used for communication protocols like SPI, I2C
 
 	spi_conf.op_type = GPIO_PUSH_PULL;
@@ -32,17 +34,17 @@ void spi_gpio_init(void){
 	//configuring GPIO settings
 	hal_gpio_init(GPIOB,&spi_conf);
 
-	/* configure GPIOB_PIN_14 for SPI MISO functionality */
+	/* configure GPIOC_PIN_2 for SPI MISO functionality */
 	spi_conf.pin = SPI_MISO_PIN;
 	spi_conf.pull = GPIO_PULL_UP;
-	hal_gpio_alt_function(GPIOB, SPI_MISO_PIN, GPIO_PIN_AF5_SPI2);
-	hal_gpio_init(GPIOB,&spi_conf);
+	hal_gpio_alt_function(GPIOC, SPI_MISO_PIN, GPIO_PIN_AF5_SPI2);
+	hal_gpio_init(GPIOC,&spi_conf);
 
-	/* configure GPIOB_PIN_15 for SPI MOSI functionality */
+	/* configure GPIOC_PIN_3 for SPI MOSI functionality */
 	spi_conf.pin = SPI_MOSI_PIN;
 	spi_conf.pull = GPIO_PULL_UP;
-	hal_gpio_alt_function(GPIOB, SPI_MOSI_PIN, GPIO_PIN_AF5_SPI2);
-	hal_gpio_init(GPIOB,&spi_conf);
+	hal_gpio_alt_function(GPIOC, SPI_MOSI_PIN, GPIO_PIN_AF5_SPI2);
+	hal_gpio_init(GPIOC,&spi_conf);
 }
 
 void slave_config(void){
@@ -75,12 +77,33 @@ void SPI2_IRQHandler(void){
 	hal_spi_irq_handler(&spiHandle);
 }
 
+void configure_ADX(spi_handle_t spiHandle){
+/******************** SETUP ********************/
+	adxPin_init();			//initializing ADX pin
+	powerOn();
+
+
+	setSPI(0);
+	setActivityXYZ(1,0,0, spiHandle); 			// Set to activate movement detection in x, y, z axes
+	setActivityThreshold(75, spiHandle);
+
+	setInactivityXYZ(1, 0, 0, spiHandle);     // Set to detect inactivity in X, Y, Z axes
+	setInactivityThreshold(75, spiHandle);    // 62.5mg per increment   // Set inactivity // Inactivity thresholds (0-255)
+	setTimeInactivity(10, spiHandle);         // How many seconds of no activity is inactive?
+
+	setTapThreshold(50, spiHandle);
+	setTapDetectionOnXYZ(0, 0, 1, spiHandle); // Detect taps in the directions turned ON
+	//	  setDoubleTapLatency(80);       // 1.25 ms per increment
+	//	  setDoubleTapWindow(200);       // 1.25 ms per increment
+
+	setFreeFallThreshold(7, spiHandle);       // (5 - 9) recommended - 62.5mg per increment
+	setFreeFallDuration(30, spiHandle);
+}
 
 int main(void){
 
-	/* SPI handle variable for configuring the SPI device */
 	uint8_t data[CMD_LENGTH];
-	uint8_t ack_buf[2];
+	uint8_t rcv_buffer[CMD_LENGTH];
 
 //	/* Configuring SPI GPIO */
 	spi_gpio_init();
@@ -110,9 +133,11 @@ int main(void){
 //	/* Initializing SPI device */
 	hal_spi_init(&spiHandle);
 
+	/* Configuring ADX */
+	configure_ADX(spiHandle);
 
 //	/* Enable IRQ for SPI in the NVIC */
-	NVIC_EnableIRQ(SPI2_IRQn);
+	//NVIC_EnableIRQ(SPI2_IRQn);
 //
 //	/******************************************************************************/
 //	/*                        Master command sending code                         */
@@ -122,13 +147,17 @@ int main(void){
 	data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
 	data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
 
+	/* Reading 0x00 register */
+	readAccel(spiHandle);
+
 	//while(1){
 
-		//tx_handler(&spiHandle, txBuffer, CMD_LENGTH); // start BLOCKING SPI communication
+
+		//tx_handler(&spiHandle, data, CMD_LENGTH); // start BLOCKING SPI communication
 
 		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
 
-		interrupts_SPI_transfer(&spiHandle, data, CMD_LENGTH);	//start NONBLOCKING SPI communication
+	//	interrupts_SPI_transfer(&spiHandle, data, rcv_buffer, CMD_LENGTH);	//start NON-BLOCKING SPI communication
 
 		/* WAIT TILL TRANSFER IS COMPLETE */
 		while(spiHandle.state != HAL_SPI_STATE_READY);
