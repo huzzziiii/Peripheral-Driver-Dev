@@ -1,8 +1,6 @@
 /*
  * spi_main.h
  *
- *  Created on: Jul 6, 2018
- *      Author: huzaifaasif
  */
 
 #ifndef SPI_MAIN_H_
@@ -26,8 +24,6 @@
 #define CMD_LENGTH				2
 #define DATA_LENGTH				4
 #define ACK_LENGTH				2
-
-// !!!!------ALTERNATE MISSING ----_!!!!!!!!
 
 /* ALTERNATE FUNCTION */
 #define GPIO_PIN_AF5_SPI2		0x05
