@@ -18,7 +18,7 @@ void spi_gpio_init(void){
 
 	_HAL_RCC_SPI2_CLK_ENABLE();		//SPI2 CLK
 	_HAL_RCC_GPIOB_CLK_ENABLE();
-	_HAL_RCC_GPIOC_CLK_ENABLE();
+	_HAL_RCC_GPIOC_CLK_ENABLE();		//CLOCK ENABLE FOR PC13 (PUSH_BUTTON)
 
 	/* configure GPIOB_PIN_10 for SPI CLK functionality */
 	spi_conf.pin = SPI_CLK_PIN;			   //PIN 10
