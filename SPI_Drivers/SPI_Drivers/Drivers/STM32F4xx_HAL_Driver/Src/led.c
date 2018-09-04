@@ -24,8 +24,8 @@ void button_init(void){
 	_HAL_RCC_GPIOC_CLK_ENABLE();		//PC13
 
 	RCC->APB2ENR |= 0x00004000;		//System configuration controller clock enable
-	SYSCFG->EXTICR[3] &= ~(0x0FU << 4U);
-	SYSCFG->EXTICR[3] |= (0x02U << 4);
+	SYSCFG->EXTICR[3] &= ~(0x0FU << 4U);	//Clearing out the bits
+	SYSCFG->EXTICR[3] |= (0x02U << 4);	//Setting the bits to enable EXTERNAL INTERRUPT for PORT C
 
 	button_config.pin = GPIO_PIN_13;
 	button_config.mode = GPIO_PIN_INPUT_MODE;
