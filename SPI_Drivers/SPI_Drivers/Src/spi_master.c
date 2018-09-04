@@ -125,7 +125,7 @@ int main(void){
 	spiHandle.Init.CLK_Polarity = SPI_CPOL_LOW;
 	spiHandle.Init.Data_Size = SPI_8_BIT_DFF_ENABLE;
 	spiHandle.Init.First_Bit = SPI_TX_MSB_FIRST;
-	spiHandle.Init.NSS = SPI_CR1_SSM_ENABLE;
+	spiHandle.Init.NSS = SPI_CR1_SSM_ENABLE;	//Specifies whether NSS signal is controlled by software (SSI bit) or hardware (NSS bit)
 	spiHandle.Init.Mode = SPI_MASTER_MODE_SEL;
 
 	spiHandle.state = HAL_SPI_STATE_READY;
