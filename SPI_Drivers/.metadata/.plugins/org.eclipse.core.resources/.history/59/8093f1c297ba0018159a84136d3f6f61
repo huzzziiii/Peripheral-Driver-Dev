@@ -63,7 +63,6 @@ void slave_config(void){
 
 /* Handler for the PUSH BUTTON (EXTI = 13) */
 void EXTI15_10_IRQHandler(void){
-
 	//clearing out the pending bit for this interrupt
 	hal_gpio_clear_interrupt(GPIO_PIN_13);
 
@@ -101,6 +100,9 @@ void configure_ADX(spi_handle_t spiHandle){
 }
 
 int main(void){
+
+	uint8_t data[CMD_LENGTH];
+	uint8_t rcv_buffer[CMD_LENGTH];
 
 	/* Configuring SPI GPIO */
 	spi_gpio_init();

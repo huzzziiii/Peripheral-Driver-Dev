@@ -102,6 +102,9 @@ void configure_ADX(spi_handle_t spiHandle){
 
 int main(void){
 
+	uint8_t data[CMD_LENGTH];
+	uint8_t rcv_buffer[CMD_LENGTH];
+
 	/* Configuring SPI GPIO */
 	spi_gpio_init();
 

@@ -2,7 +2,6 @@
  * stm32f4xx_gpio_driver.h
  *
  *  Created on: Jun 24, 2018
- *      Author: huzaifaasif
  */
 
 #ifndef STM32F4XX_HAL_DRIVER_INC_STM32F4XX_GPIO_DRIVER_H_

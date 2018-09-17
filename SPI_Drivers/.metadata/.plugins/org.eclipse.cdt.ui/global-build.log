@@ -11088,3 +11088,48 @@ arm-none-eabi-size "SPI_Drivers.elf"
    text	   data	    bss	    dec	    hex	filename
    3876	      8	   1632	   5516	   158c	SPI_Drivers.elf
  
+12:34:55 **** Incremental Build of configuration Debug for project SPI_Drivers ****
+make all 
+Building file: ../Src/adx345.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adx345.d" -MT"Src/adx345.o" -o "Src/adx345.o" "../Src/adx345.c"
+Finished building: ../Src/adx345.c
+ 
+Building file: ../Src/spi_master.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/spi_master.d" -MT"Src/spi_master.o" -o "Src/spi_master.o" "../Src/spi_master.c"
+../Src/spi_master.c: In function 'main':
+../Src/spi_master.c:105:10: warning: unused variable 'rcv_buffer' [-Wunused-variable]
+  uint8_t rcv_buffer[CMD_LENGTH];
+          ^
+../Src/spi_master.c:104:10: warning: unused variable 'data' [-Wunused-variable]
+  uint8_t data[CMD_LENGTH];
+          ^
+Finished building: ../Src/spi_master.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/led.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/led.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/led.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/led.o" "../Drivers/STM32F4xx_HAL_Driver/Src/led.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/led.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+Invoking: MCU GCC Compiler
+/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DSTM32F401xE -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Inc" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/STM32F4xx_HAL_Driver/Inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/engLife/Projects/Mastering embedded systems/STMCubeX/Driver_Development/SPI_Drivers/SPI_Drivers/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_gpio_driver.c
+ 
+Building target: SPI_Drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F401RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "SPI_Drivers.elf" @"objects.list"  
+Finished building target: SPI_Drivers.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "SPI_Drivers.elf" "SPI_Drivers.bin"
+arm-none-eabi-size "SPI_Drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3756	      8	   1632	   5396	   1514	SPI_Drivers.elf
+ 
