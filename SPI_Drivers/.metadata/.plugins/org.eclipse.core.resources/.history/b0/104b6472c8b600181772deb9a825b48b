@@ -28,7 +28,6 @@
 
 
 uint8_t buffer[BYTES_TO_READ];
-uint8_t x, y, z;
 
 void adxPin_init();
 void powerOn(spi_handle_t spiHandle);

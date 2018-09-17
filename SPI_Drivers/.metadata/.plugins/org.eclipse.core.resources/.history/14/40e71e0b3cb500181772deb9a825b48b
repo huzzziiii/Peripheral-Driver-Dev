@@ -1,7 +1,6 @@
 #include "hal_spi_driver.h"
 #include "stm32f4xx_gpio_driver.h"
 #include "stm32f4xx_gpio_driver.h"
-#include <stdbool.h>
 
 #define BYTES_TO_READ		 	1
 #define ADX_PIN					10
@@ -28,21 +27,9 @@
 
 
 uint8_t buffer[BYTES_TO_READ];
-uint8_t x, y, z;
 
 void adxPin_init();
 void powerOn(spi_handle_t spiHandle);
-void setSPI(bool state, spi_handle_t spiHandle);
-void setActivityXYZ(bool stateX, bool stateY, bool stateZ, spi_handle_t spiHandle);
-void setInactivityXYZ(bool stateX, bool stateY, bool stateZ, spi_handle_t spiHandle);
-void setInactivityThreshold(uint8_t inactivityThreshold, spi_handle_t spiHandle);
-void setTimeInactivity(uint8_t timeInactivity, spi_handle_t spiHandle);
-void setTapDetectionOnXYZ(bool stateX, bool stateY, bool stateZ, spi_handle_t spiHandle);
-void setTapThreshold(uint8_t tapThreshold, spi_handle_t spiHandle);
-void setFreeFallThreshold(uint8_t freeFallThreshold, spi_handle_t spiHandle);
-void setFreeFallDuration(uint8_t freeFallDuration, spi_handle_t spiHandle);
-void setActivityThreshold(uint8_t activityThreshold, spi_handle_t spiHandle);
-
 void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle_t spiHandle);
 void readAccel(spi_handle_t spiHandle);
 void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle);

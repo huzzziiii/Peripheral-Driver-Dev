@@ -228,6 +228,16 @@ uint32_t begin_spi(spi_handle_t *hspi){
 	return val;
 }
 
+uint8_t SPI_transfer(spi_handle_t *hspi, uint8_t data){
+	while (!(hspi->Instance->SR & SPI_SR_TXE)){}	//Wait till TXE = EMPTY
+	hspi->Instance->DR = data;
+
+	while(!(hspi->Instance->SR & SPI_SR_RXNE)){}	//Wait till RXNE = NOT EMPTY
+	uint8_t value = hspi->Instance->DR;
+
+	return value;
+}
+
 uint32_t SPItransfer(spi_handle_t *hspi, uint8_t *txBuffer, uint8_t size){
 	uint32_t temp=0, data;
 	hspi->txBuffer = txBuffer;

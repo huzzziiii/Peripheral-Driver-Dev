@@ -28,7 +28,6 @@
 
 
 uint8_t buffer[BYTES_TO_READ];
-uint8_t x, y, z;
 
 void adxPin_init();
 void powerOn(spi_handle_t spiHandle);
@@ -41,7 +40,6 @@ void setTapDetectionOnXYZ(bool stateX, bool stateY, bool stateZ, spi_handle_t sp
 void setTapThreshold(uint8_t tapThreshold, spi_handle_t spiHandle);
 void setFreeFallThreshold(uint8_t freeFallThreshold, spi_handle_t spiHandle);
 void setFreeFallDuration(uint8_t freeFallDuration, spi_handle_t spiHandle);
-void setActivityThreshold(uint8_t activityThreshold, spi_handle_t spiHandle);
 
 void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle_t spiHandle);
 void readAccel(spi_handle_t spiHandle);

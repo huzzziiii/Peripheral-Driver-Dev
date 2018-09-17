@@ -2,17 +2,17 @@
 #include <stdbool.h>
 
 void adxPin_init(){
-	GPIO_PIN_CONFIG ADX_pin_config;
+	GPIO_PIN_CONFIG led_pin_config;
 	_HAL_RCC_GPIOC_CLK_ENABLE();			// *CHANGE PORT*
 
-	ADX_pin_config.pin = ADX_PIN;
-	ADX_pin_config.mode = GPIO_PIN_OUTPUT_MODE;
-	ADX_pin_config.op_type = GPIO_PUSH_PULL;
-	ADX_pin_config.speed = GPIO_MEDIUM_SPEED;
-	ADX_pin_config.pull = GPIO_NO_PUPD;
+	led_pin_config.pin = ADX_PIN;
+	led_pin_config.mode = GPIO_PIN_OUTPUT_MODE;
+	led_pin_config.op_type = GPIO_PUSH_PULL;
+	led_pin_config.speed = GPIO_MEDIUM_SPEED;
+	led_pin_config.pull = GPIO_NO_PUPD;
 
 	//Initializing PIN
-	hal_gpio_init(GPIOC, &ADX_pin_config);	// *CHANGE PORT*
+	hal_gpio_init(GPIOA, &led_pin_config);	// *CHANGE PORT*
 
 	//Disabling CS
 	hal_gpio_write_to_pin(GPIOC, 0, ADX_PIN);	//* CHANGE PORT *
@@ -20,8 +20,8 @@ void adxPin_init(){
 }
 
 void powerOn(spi_handle_t spiHandle){
-//	writeTo(ADXL345_POWER_CTL, 0, spiHandle);	// Wakeup
-//	writeTo(ADXL345_POWER_CTL, 16, spiHandle);	// Auto_Sleep
+	writeTo(ADXL345_POWER_CTL, 0, spiHandle);	// Wakeup
+	writeTo(ADXL345_POWER_CTL, 16, spiHandle);	// Auto_Sleep
 	writeTo(ADXL345_POWER_CTL, 8, spiHandle);	// Measure
 }
 
@@ -47,7 +47,7 @@ void setSPI(bool state, spi_handle_t spiHandle){
 /*************************** READ FROM SPI **************************/
 void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle_t spiHandle){
 	address |= 0x80;		// Enable READ bit
-	address |= 0x40;		// Enable Multi-bit byte
+	//MB = 0 			-- read 1 byte
 
 	/* Enabling CS */
 	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
@@ -55,7 +55,7 @@ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle
 	/* Transmitting the register address (MOSI --> MISO) */
 	SPI_transfer(&spiHandle, address);
 
-	/* reading multi-byte data */
+	/* reading data */
 	for (int i=0; i<bytes_to_read; i++){
 		buffer[i] = SPI_transfer(&spiHandle, 0x00);
 	}
@@ -68,10 +68,6 @@ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle
 
 void readAccel(spi_handle_t spiHandle){
 	readFrom(ADXL345_DEVID, BYTES_TO_READ, buffer, spiHandle);
-
-	x = (buffer[1] << 8) | buffer[0];
-	y = (buffer[3] << 8) | buffer[2];
-	z = (buffer[5] << 8) | buffer[4];
 }
 
 /*************************** WRITE TO SPI **************************/
@@ -80,10 +76,10 @@ void writeTo(uint8_t address, uint8_t data, spi_handle_t spiHandle){
 	hal_gpio_write_to_pin(ADX_PORT, 0, ADX_PIN);
 
 	/* Transmitting the register address */
-	SPI_transfer(&spiHandle, address);
+	SPItransfer(&spiHandle, address, 1);
 
 	/* Transmitting data */
-	SPI_transfer(&spiHandle, data);
+	SPItransfer(&spiHandle, data, 1);
 
 	/* Disabling CS */
 	hal_gpio_write_to_pin(ADX_PORT, 1, ADX_PIN);

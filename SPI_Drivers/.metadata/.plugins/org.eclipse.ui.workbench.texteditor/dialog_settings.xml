@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="hal_spi_config_device_mode" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="begin_spi"/>
+			<item value="begin_spi()"/>
 			<item value="hal_spi_config_device_mode"/>
 			<item value="hal_spi_config_phase_polarity"/>
 			<item value="SPI_REG_CR1_BIDIMODE"/>
@@ -21,8 +23,6 @@
 			<item value="SPI2_IRQn"/>
 			<item value="EXTI"/>
 			<item value="SPI_CR1_DFF"/>
-			<item value="SPI_CR1_BIDIMODE"/>
-			<item value="GPIO_PIN"/>
 		</list>
 		<list key="replacehistory">
 		</list>

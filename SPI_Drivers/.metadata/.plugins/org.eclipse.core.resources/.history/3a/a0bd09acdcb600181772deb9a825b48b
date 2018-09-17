@@ -104,7 +104,7 @@ int main(void){
 	uint8_t data[CMD_LENGTH];
 	uint8_t rcv_buffer[CMD_LENGTH];
 
-	/* Configuring SPI GPIO */
+//	/* Configuring SPI GPIO */
 	spi_gpio_init();
 
 	/* Configuring LED GPIO */
@@ -143,12 +143,28 @@ int main(void){
 //	/*                         Write and read commands                            */
 //	/******************************************************************************/
 
-//	data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
-//	data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
+	data[0] = (uint8_t) CMD_MASTER_WRITE;		//1357 -- 57
+	data[1] = (uint8_t) (CMD_MASTER_WRITE >> 8); 	// -- 13
 
 	/* Reading 0x00 register */
 	readAccel(spiHandle);
 
+	//while(1){
+
+
+		//tx_handler(&spiHandle, data, CMD_LENGTH); // start BLOCKING SPI communication
+
+		//hal_spi_master_tx(&spiHandle, data, CMD_LENGTH);
+
+	//	interrupts_SPI_transfer(&spiHandle, data, rcv_buffer, CMD_LENGTH);	//start NON-BLOCKING SPI communication
+
+		/* WAIT TILL TRANSFER IS COMPLETE */
+		while(spiHandle.state != HAL_SPI_STATE_READY);
+
+	//	hal_spi_master_rx(&spiHandle, ack_buf, ACK_LENGTH);
+
+
+	//}
 
 	return 0;
 }

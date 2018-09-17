@@ -68,10 +68,6 @@ void readFrom(uint8_t address, uint8_t bytes_to_read, uint8_t buff[], spi_handle
 
 void readAccel(spi_handle_t spiHandle){
 	readFrom(ADXL345_DEVID, BYTES_TO_READ, buffer, spiHandle);
-
-	x = (buffer[1] << 8) | buffer[0];
-	y = (buffer[3] << 8) | buffer[2];
-	z = (buffer[5] << 8) | buffer[4];
 }
 
 /*************************** WRITE TO SPI **************************/
